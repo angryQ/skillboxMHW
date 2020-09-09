@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  DZ7
 //
-//  Created by Kristina Kudinova on 10.09.2020.
+//  Created by Kristina Kudinova on 09.09.2020.
 //  Copyright © 2020 Kristina Kudinova. All rights reserved.
 //
 
