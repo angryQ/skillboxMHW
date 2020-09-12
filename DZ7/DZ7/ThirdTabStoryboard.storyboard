@@ -25,10 +25,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="setGreenColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="wUE-t9-mLD"/>
+                                    <action selector="selectColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="Uk9-Kt-t7Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F28-BG-19O">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F28-BG-19O">
                                 <rect key="frame" x="20" y="144" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.20784313730000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -38,10 +38,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="setYellowColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="P8X-6q-L8a"/>
+                                    <action selector="selectColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="fZb-wW-1Cw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-gC-33I">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-gC-33I">
                                 <rect key="frame" x="20" y="214" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.20784313730000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -51,7 +51,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="setPurpleColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="Xka-Xx-4jG"/>
+                                    <action selector="selectColor:" destination="S5q-YK-niq" eventType="touchUpInside" id="mZ2-aX-QHb"/>
                                 </connections>
                             </button>
                         </subviews>

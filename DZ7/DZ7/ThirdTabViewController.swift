@@ -10,34 +10,22 @@ import UIKit
 
 
 //Протокол с требованиями делегатору
-protocol ThirdTabControllerDelegate {
+protocol ThirdTabControllerDelegate: AnyObject {
     func setBackgroundColorInMainVC(_ color: UIColor)
 }
 
 class ThirdTabViewController: UIViewController {
     
-    var delegate: ThirdTabControllerDelegate? //делегат класса ThirdTabViewController
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    weak var delegate: ThirdTabControllerDelegate? //делегат класса ThirdTabViewController
     
     //Реализация действий на нажатие кнопок на третьей табе, которые меняют цвет бэкграунда родительского view controller'a
-    @IBAction func setGreenColor(_ sender: Any) {
-        changeBackgroundColorInParentVC(color: UIColor.green)
+    @IBAction func selectColor(_ sender: UIButton) {
+        guard let color = Color(rawValue: sender.tag) else { return }
+        changeBackgroundColorInParentVC(color: color.rawColor)
     }
-    @IBAction func setYellowColor(_ sender: Any) {
-       changeBackgroundColorInParentVC(color: UIColor.yellow)
-    }
-    @IBAction func setPurpleColor(_ sender: Any) {
-        changeBackgroundColorInParentVC(color: UIColor.purple)
-    }
-    
     //Функция для изменения цвета бэкграунда у родительского view controller'a на третьей вкладке
     private func changeBackgroundColorInParentVC(color: UIColor) {
-        if let unwrappedContainerToMainVC = delegate {
-            unwrappedContainerToMainVC.setBackgroundColorInMainVC(color)
-        }
+            delegate?.setBackgroundColorInMainVC(color)
     }
 }
 //Класс ThirdTabViewController является делегатом для класса ViewController. Принимаем и реализуем потребности класса ViewController

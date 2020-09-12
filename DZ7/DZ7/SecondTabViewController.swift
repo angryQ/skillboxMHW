@@ -10,7 +10,7 @@ import UIKit
 
 
 //Протокол с требованиями делегатору
-protocol SecondTabControllerDelegate {
+protocol SecondTabControllerDelegate: AnyObject {
     func update(_ text: String)
 }
 
@@ -18,13 +18,7 @@ protocol SecondTabControllerDelegate {
 class SecondTabViewController: UIViewController {
     
     var selectedColor: String = "" //свойство в котором хранится выбранный цвет
-    //enum хранящий доступные для выбора цветаи их RawValue
-    enum selectedColorSwitch: String {
-        case green = "зелёный"
-        case blue = "синий"
-        case red = "красный"
-    }
-    var delegate: SecondTabControllerDelegate? //делегат класса SecondTabViewController
+    weak var delegate: SecondTabControllerDelegate? //делегат класса SecondTabViewController
     
     @IBOutlet weak var selectedColorTextField: UITextField!
     
@@ -34,22 +28,15 @@ class SecondTabViewController: UIViewController {
     }
     
     //Реализация действий на нажатие кнопок на экране SecondTabStorybord
-    @IBAction func selectGreenColor(_ sender: Any) {
-        change(color: selectedColorSwitch.green.rawValue)
-    }
-    @IBAction func selectBlueColor(_ sender: Any) {
-        change(color: selectedColorSwitch.blue.rawValue)
-    }
-    @IBAction func selectRedColor(_ sender: Any) {
-        change(color: selectedColorSwitch.red.rawValue)
+    @IBAction func selectColor(_ sender: UIButton) {
+        guard let color = Color(rawValue: sender.tag) else { return }
+        change(color: color.description)
     }
     
     //Функция которая передает делегату новый цвет, а делегат передаст его предыдущей табе
     private func change(color: String) {
-        selectedColor = color
         dismiss(animated: true, completion: nil)
-        guard let unwrappedDelegate = delegate else { return }
-        unwrappedDelegate.update(selectedColor)
+        delegate?.update(color)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

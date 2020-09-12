@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DZ7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -75,43 +74,43 @@
                     </view>
                     <navigationItem key="navigationItem" id="ANh-Z5-Ak0"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1267" y="-229"/>
         </scene>
         <!--GreenViewController-->
         <scene sceneID="beu-1o-BoW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcr-mW-C4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="FirstTabStoryboard" referencedIdentifier="GreenViewController" id="mpa-RU-eqH" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Cv9-lc-J1Y"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcr-mW-C4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2064" y="-392"/>
         </scene>
         <!--BlueViewController-->
         <scene sceneID="MDd-OU-Hv0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tQ5-uh-ebg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="FirstTabStoryboard" referencedIdentifier="BlueViewController" id="jVE-Qu-3bK" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9W0-Ft-Ua3"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQ5-uh-ebg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2057" y="-229"/>
         </scene>
         <!--RedViewController-->
         <scene sceneID="gYx-c8-6X8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N5d-US-cg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="FirstTabStoryboard" referencedIdentifier="RedViewController" id="ZQt-9j-mr0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="QUU-ZT-hxc"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5d-US-cg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2055" y="-82"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="E7g-a8-wD8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89Z-BG-YhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="L5S-ni-Fyn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xRt-3Z-vS2">
@@ -134,13 +133,13 @@
                         <segue destination="fHV-4j-wrs" kind="relationship" relationship="viewControllers" id="fSu-IE-lUI"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89Z-BG-YhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-713" y="217"/>
         </scene>
         <!--Third-->
         <scene sceneID="nQF-zX-L7J">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="20J-U5-Jr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="thirdTabId" id="fHV-4j-wrs" customClass="ViewController" customModule="DZ7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="testId" id="UpK-hr-gGV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -154,7 +153,7 @@
                                 </constraints>
                                 <state key="normal" title="Зелёный"/>
                                 <connections>
-                                    <action selector="setGreenColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="B7m-Wd-Lpu"/>
+                                    <action selector="selectColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="Axt-fG-Hhv"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AX6-KH-tra">
@@ -163,7 +162,7 @@
                                     <segue destination="54h-oT-P4n" kind="embed" identifier="toThirdTabStoryboard" id="F3G-fO-khk"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-Tw-wda">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-Tw-wda">
                                 <rect key="frame" x="20" y="154" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.20784313725490194" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -173,10 +172,10 @@
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="setYellowColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="lba-np-9zg"/>
+                                    <action selector="selectColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="v9p-H9-4TU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZs-Vp-G9G">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZs-Vp-G9G">
                                 <rect key="frame" x="20" y="224" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.20784313725490194" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -186,7 +185,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="setPupleColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="tmB-wr-w1L"/>
+                                    <action selector="selectColor:" destination="fHV-4j-wrs" eventType="touchUpInside" id="jtE-gk-U87"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -212,21 +211,21 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-12"/>
                     </tabBarItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20J-U5-Jr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="257" y="790"/>
         </scene>
         <!--ThirdTabViewController-->
         <scene sceneID="1mB-ln-hru">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IiQ-EI-Wnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="ThirdTabViewController" storyboardName="ThirdTabStoryboard" referencedIdentifier="ThirdTabViewController" id="54h-oT-P4n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IiQ-EI-Wnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="851" y="958"/>
         </scene>
         <!--Second-->
         <scene sceneID="szb-aO-8Nv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cyN-HW-3Vw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="yix-bO-Zf4" customClass="ViewController" customModule="DZ7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZZp-YD-ZAu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -274,23 +273,23 @@
                         <outlet property="selectedColorLabel" destination="d6v-R3-A1K" id="FMb-bX-l5z"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyN-HW-3Vw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1267" y="439"/>
         </scene>
         <!--changeColorViewController-->
         <scene sceneID="FOJ-at-A2I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tEq-aX-12E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="SecondTabStoryboard" referencedIdentifier="changeColorViewController" id="DUi-3L-LfP" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="GUQ-0C-1Ys"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEq-aX-12E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="549"/>
         </scene>
         <!--First-->
         <scene sceneID="Bxz-TL-ZX6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p9j-dh-doi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S65-9M-DsQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="First" id="ZYe-jh-CII">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-12"/>
@@ -308,6 +307,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZYg-9W-wH8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9j-dh-doi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="343" y="-229"/>
         </scene>

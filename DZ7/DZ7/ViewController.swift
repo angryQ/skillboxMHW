@@ -10,25 +10,53 @@
 import UIKit
 
 //Протокол с требованиями делегатору
-protocol ViewControllerDelegate {
+protocol ViewControllerDelegate: AnyObject {
     func setBackgroundColorInEmbededVC(_ color: UIColor)
+}
+enum Color: Int {
+    case green = 0
+    case yellow = 1
+    case purple = 2
+    case red = 3
+    case blue = 4
+    
+    var rawColor: UIColor {
+        switch self.rawValue {
+        case 0: return .green
+        case 1: return .yellow
+        case 2: return .purple
+        case 3: return .red
+        case 4: return .blue
+        default: return .clear
+        }
+    }
+    var description: String {
+        switch self.rawValue {
+        case 0: return "зелёный"
+        case 1: return "жёлтый"
+        case 2: return "фиолетовый"
+        case 3: return "синий"
+        case 4: return "красный"
+        default: return ""
+        }
+    }
+}
+//структура для хранения всех созданных segues
+struct Segues {
+    static let toSecondTab = "toSecondTabStoryboard"
+    static let toThirdTab = "toThirdTabStoryboard"
 }
 
 class ViewController: UIViewController {
 
     var text: String =  "Выбран зелёный" //свойство в которое будет передаваться выбранный на экране SecondTabViewController цвет
-    var color: UIColor = .secondarySystemBackground //свойство в которое будет передаваться значение цвета бэкграунда для третьей табы
-    var delegate: ViewControllerDelegate? //делегат класса ViewController
-    //enum для хранения всех созданных segues
-    enum Segues {
-        static let toSecondTab = "toSecondTabStoryboard"
-        static let toThirdTab = "toThirdTabStoryboard"
-    }
+    weak var delegate: ViewControllerDelegate? //делегат класса ViewController
     
     @IBOutlet weak var selectedColorLabel: UILabel! //метка на второй табе
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Устанавливаем для метки на второй табе дефолтное значение
         if let unwrappedLabel = selectedColorLabel {
             unwrappedLabel.text = text
@@ -53,22 +81,16 @@ class ViewController: UIViewController {
             self.delegate = vc
         }
     }
+    
    //Реализация действий на нажатие кнопок на третьей табе, которые меняют цвет встроенного view controller'a
-    @IBAction func setGreenColor(_ sender: Any) {
-        changeBackgroundColorInEmbededVC(color: UIColor.green)
-    }
-    @IBAction func setYellowColor(_ sender: Any) {
-        changeBackgroundColorInEmbededVC(color: UIColor.yellow)
-    }
-    @IBAction func setPupleColor(_ sender: Any) {
-        changeBackgroundColorInEmbededVC(color: UIColor.purple)
+    @IBAction func selectColor(_ sender: UIButton) {
+        guard let color = Color(rawValue: sender.tag) else { return }
+        changeBackgroundColorInEmbededVC(color: color.rawColor)
     }
     
     //Функция для изменения цвета бэкграунда у встроенного view controller'a на третьей вкладке
     private func changeBackgroundColorInEmbededVC(color: UIColor) {
-        if let unwrappedContainerViewController = delegate {
-            unwrappedContainerViewController.setBackgroundColorInEmbededVC(color)
-        }
+        delegate?.setBackgroundColorInEmbededVC(color)
     }
 }
 //Класс ViewController является делегатом для класса SecondTabViewController. Принимаем и реализуем потребности класса SecondTabViewController
@@ -80,8 +102,7 @@ extension ViewController: SecondTabControllerDelegate {
 //Класс ViewController является делегатом для класса ThirdTabController. Принимаем и реализуем потребности класса ThirdTabViewController
 extension ViewController: ThirdTabControllerDelegate {
     func setBackgroundColorInMainVC(_ color: UIColor) {
-        self.color = color
-        self.view.backgroundColor = self.color
+        self.view.backgroundColor = color
     }
 }
 

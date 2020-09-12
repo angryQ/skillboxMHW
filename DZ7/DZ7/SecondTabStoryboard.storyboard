@@ -25,10 +25,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectGreenColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="HVA-m2-Iz3"/>
+                                    <action selector="selectColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="d6X-s8-FJ7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLl-oz-zCG">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLl-oz-zCG">
                                 <rect key="frame" x="20" y="234" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.20784313730000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -38,10 +38,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectBlueColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="fS6-mj-d0O"/>
+                                    <action selector="selectColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="T2a-SG-ZMS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNE-Dg-TJy">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNE-Dg-TJy">
                                 <rect key="frame" x="20" y="304" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.20784313730000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -51,7 +51,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectRedColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="zis-v3-vFb"/>
+                                    <action selector="selectColor:" destination="1ze-fp-7Zj" eventType="touchUpInside" id="0MC-9A-XoB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-FD-GDO">
