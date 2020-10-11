@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ie4-yh-MJa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Purple View Controller-->
+        <scene sceneID="NCu-vr-Lii">
+            <objects>
+                <viewController id="ie4-yh-MJa" customClass="PurpleViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2KV-pK-BnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic-5" translatesAutoresizingMaskIntoConstraints="NO" id="b28-9k-ngO">
+                                <rect key="frame" x="20" y="294" width="374" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="rPB-3A-NYf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic-1" translatesAutoresizingMaskIntoConstraints="NO" id="kGh-0O-2sT">
+                                <rect key="frame" x="20" y="84" width="374" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="w5t-sv-Kev"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b28-9k-ngO" firstAttribute="top" secondItem="kGh-0O-2sT" secondAttribute="bottom" constant="40" id="5CH-7s-ZkX"/>
+                            <constraint firstItem="kGh-0O-2sT" firstAttribute="leading" secondItem="KTX-Sb-4R7" secondAttribute="leading" constant="20" id="Bts-2s-XYM"/>
+                            <constraint firstItem="KTX-Sb-4R7" firstAttribute="trailing" secondItem="kGh-0O-2sT" secondAttribute="trailing" constant="20" id="UAX-G5-IyK"/>
+                            <constraint firstItem="b28-9k-ngO" firstAttribute="leading" secondItem="KTX-Sb-4R7" secondAttribute="leading" constant="20" id="YrB-Bo-FDa"/>
+                            <constraint firstItem="KTX-Sb-4R7" firstAttribute="trailing" secondItem="b28-9k-ngO" secondAttribute="trailing" constant="20" id="iEV-Je-VUs"/>
+                            <constraint firstItem="kGh-0O-2sT" firstAttribute="top" secondItem="KTX-Sb-4R7" secondAttribute="top" constant="40" id="xli-0I-h7n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KTX-Sb-4R7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t11-Hu-XwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402.89855072463769" y="778.79464285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pic-1" width="1900" height="1268"/>
+        <image name="pic-5" width="500" height="697"/>
+    </resources>
+</document>
