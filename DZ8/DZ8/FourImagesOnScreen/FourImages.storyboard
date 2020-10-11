@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oxZ-Di-yvi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Задание 2-->
+        <scene sceneID="atv-Jf-QzL">
+            <objects>
+                <viewController storyboardIdentifier="ImagesInLoop" id="oxZ-Di-yvi" customClass="FourImagesViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iTd-oP-ELS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHI-J8-ZgS">
+                                <rect key="frame" x="20" y="64" width="374" height="729"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="TcI-4q-Qgn" firstAttribute="bottom" secondItem="yHI-J8-ZgS" secondAttribute="bottom" constant="20" id="421-IK-s1q"/>
+                            <constraint firstItem="yHI-J8-ZgS" firstAttribute="top" secondItem="TcI-4q-Qgn" secondAttribute="top" constant="20" id="8cC-MU-U3s"/>
+                            <constraint firstItem="yHI-J8-ZgS" firstAttribute="leading" secondItem="TcI-4q-Qgn" secondAttribute="leading" constant="20" id="8nd-2v-dVe"/>
+                            <constraint firstItem="TcI-4q-Qgn" firstAttribute="trailing" secondItem="yHI-J8-ZgS" secondAttribute="trailing" constant="20" id="MY8-cA-qKP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TcI-4q-Qgn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Задание 2" id="7fN-M8-O13"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="holderView" destination="yHI-J8-ZgS" id="TBW-Oq-9Ts"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BQ-CB-Ski" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="27.455357142857142"/>
+        </scene>
+    </scenes>
+</document>

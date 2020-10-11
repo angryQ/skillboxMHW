@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C34-0I-zkE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Задание 1-->
+        <scene sceneID="2gC-K0-cl0">
+            <objects>
+                <viewController storyboardIdentifier="GalleryStoryboard" id="C34-0I-zkE" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cvF-kV-gKS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hxe-kL-fUW">
+                                <rect key="frame" x="20" y="84" width="374" height="510"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikE-DP-I6b" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="20" y="683" width="45" height="30"/>
+                                <state key="normal" title="Назад"/>
+                                <connections>
+                                    <action selector="backButtonTap" destination="C34-0I-zkE" eventType="touchUpInside" id="rZy-lE-ju4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqh-cR-0t2" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="338" y="683" width="56" height="30"/>
+                                <state key="normal" title="Дальше"/>
+                                <connections>
+                                    <action selector="nextButtonTap" destination="C34-0I-zkE" eventType="touchUpInside" id="1bK-fn-1t4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Hxe-kL-fUW" firstAttribute="leading" secondItem="Fdf-HZ-6OU" secondAttribute="leading" constant="20" id="1pg-2i-0Fc"/>
+                            <constraint firstItem="ikE-DP-I6b" firstAttribute="leading" secondItem="Fdf-HZ-6OU" secondAttribute="leading" constant="20" id="BTG-rt-dXH"/>
+                            <constraint firstItem="Hxe-kL-fUW" firstAttribute="top" secondItem="Fdf-HZ-6OU" secondAttribute="top" constant="40" id="GBg-sY-Z7N"/>
+                            <constraint firstItem="mqh-cR-0t2" firstAttribute="top" secondItem="Hxe-kL-fUW" secondAttribute="bottom" constant="89" id="IkU-rH-Tjw"/>
+                            <constraint firstItem="Fdf-HZ-6OU" firstAttribute="trailing" secondItem="mqh-cR-0t2" secondAttribute="trailing" constant="20" id="Sf4-if-HUE"/>
+                            <constraint firstItem="Fdf-HZ-6OU" firstAttribute="bottom" secondItem="ikE-DP-I6b" secondAttribute="bottom" constant="100" id="l49-CE-ebs"/>
+                            <constraint firstItem="Fdf-HZ-6OU" firstAttribute="trailing" secondItem="Hxe-kL-fUW" secondAttribute="trailing" constant="20" id="nIp-xR-tNL"/>
+                            <constraint firstItem="Fdf-HZ-6OU" firstAttribute="bottom" secondItem="mqh-cR-0t2" secondAttribute="bottom" constant="100" id="w6b-3S-lib"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fdf-HZ-6OU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Задание 1" id="fMP-XI-KrW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="galleryImageView" destination="Hxe-kL-fUW" id="ENY-ft-osZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSt-VW-yca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="-7.3660714285714279"/>
+        </scene>
+    </scenes>
+</document>
