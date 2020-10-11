@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hR-Ap-mWm">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="jfD-7c-AiO">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="4hR-Ap-mWm" customClass="PageViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjv-xp-Vge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399" y="163"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="vHk-Fo-rEd">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="BdD-pd-fYW" customClass="ContentViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U3b-oe-NLY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u12-gi-Ddg">
+                                <rect key="frame" x="60" y="60" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u12-gi-Ddg" secondAttribute="height" multiplier="1:1" id="KSF-Yo-wJR"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-vb-2vB" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.46666666666666667" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Перейти к проверке ДЗ    &gt;">
+                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startWatchHomeWork" destination="BdD-pd-fYW" eventType="touchUpInside" id="oPQ-zS-h3h"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Kf-Tx-adm">
+                                <rect key="frame" x="168" y="590" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.94117647059999998" green="0.42352941179999998" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label label bghgjhgjgjgjhg" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LE-dl-36X">
+                                <rect key="frame" x="40" y="417" width="295" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Gsn-lZ-Gjw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="u12-gi-Ddg" firstAttribute="centerX" secondItem="U3b-oe-NLY" secondAttribute="centerX" id="FlI-PO-g8X"/>
+                            <constraint firstItem="5LE-dl-36X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="u12-gi-Ddg" secondAttribute="bottom" constant="40" id="HNo-GK-fWt"/>
+                            <constraint firstItem="Ocd-oe-eXW" firstAttribute="trailing" secondItem="s6g-vb-2vB" secondAttribute="trailing" constant="20" id="IQR-jz-hUM"/>
+                            <constraint firstItem="2Kf-Tx-adm" firstAttribute="centerX" secondItem="Ocd-oe-eXW" secondAttribute="centerX" id="JGV-2d-32t"/>
+                            <constraint firstItem="u12-gi-Ddg" firstAttribute="top" secondItem="Ocd-oe-eXW" secondAttribute="top" constant="60" id="Jwe-dR-ZWH"/>
+                            <constraint firstItem="5LE-dl-36X" firstAttribute="leading" secondItem="Ocd-oe-eXW" secondAttribute="leading" constant="40" id="Nff-UH-Ral"/>
+                            <constraint firstItem="Ocd-oe-eXW" firstAttribute="bottom" secondItem="2Kf-Tx-adm" secondAttribute="bottom" constant="40" id="Vc6-iQ-ZJO"/>
+                            <constraint firstItem="Ocd-oe-eXW" firstAttribute="trailing" secondItem="u12-gi-Ddg" secondAttribute="trailing" constant="60" id="VzO-VG-zMM"/>
+                            <constraint firstItem="u12-gi-Ddg" firstAttribute="leading" secondItem="Ocd-oe-eXW" secondAttribute="leading" constant="60" id="XzK-dt-pi0"/>
+                            <constraint firstItem="s6g-vb-2vB" firstAttribute="leading" secondItem="Ocd-oe-eXW" secondAttribute="leading" constant="20" id="g3d-lb-evA"/>
+                            <constraint firstItem="Ocd-oe-eXW" firstAttribute="bottom" secondItem="s6g-vb-2vB" secondAttribute="bottom" constant="20" id="neH-f8-YvC"/>
+                            <constraint firstItem="Ocd-oe-eXW" firstAttribute="trailing" secondItem="5LE-dl-36X" secondAttribute="trailing" constant="40" id="t3b-hd-r1L"/>
+                            <constraint firstItem="s6g-vb-2vB" firstAttribute="top" secondItem="5LE-dl-36X" secondAttribute="bottom" constant="60" id="wnQ-LH-k8D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ocd-oe-eXW"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="u12-gi-Ddg" id="yNY-Im-81c"/>
+                        <outlet property="pageControl" destination="2Kf-Tx-adm" id="IT6-w8-km5"/>
+                        <outlet property="presentTextLabel" destination="5LE-dl-36X" id="9bw-My-898"/>
+                        <outlet property="startButton" destination="s6g-vb-2vB" id="6dW-eF-eSo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eU-SK-s4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="162.3688155922039"/>
+        </scene>
+    </scenes>
+</document>

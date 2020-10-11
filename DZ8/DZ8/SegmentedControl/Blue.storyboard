@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3B4-j8-8YT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blue View Controller-->
+        <scene sceneID="Lkn-1p-8th">
+            <objects>
+                <viewController id="3B4-j8-8YT" customClass="BlueViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgV-hK-Ysd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqT-HR-Ocx" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="374" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Кнопка 1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didButtonOneTap:" destination="3B4-j8-8YT" eventType="touchUpInside" id="z60-8e-4fc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e05-Xm-zJe" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="20" y="144" width="374" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Кнопка 2">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didButtonTwoTap:" destination="3B4-j8-8YT" eventType="touchUpInside" id="X6X-d2-qCl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NqT-HR-Ocx" firstAttribute="top" secondItem="Fct-g6-CQe" secondAttribute="top" constant="40" id="8Zt-lq-iQa"/>
+                            <constraint firstItem="e05-Xm-zJe" firstAttribute="top" secondItem="NqT-HR-Ocx" secondAttribute="bottom" constant="30" id="Gdp-qB-g5s"/>
+                            <constraint firstItem="NqT-HR-Ocx" firstAttribute="leading" secondItem="Fct-g6-CQe" secondAttribute="leading" constant="20" id="KZE-vV-giK"/>
+                            <constraint firstItem="e05-Xm-zJe" firstAttribute="leading" secondItem="Fct-g6-CQe" secondAttribute="leading" constant="20" id="Roe-qI-xXP"/>
+                            <constraint firstItem="Fct-g6-CQe" firstAttribute="trailing" secondItem="NqT-HR-Ocx" secondAttribute="trailing" constant="20" id="lGz-AZ-Yd6"/>
+                            <constraint firstItem="Fct-g6-CQe" firstAttribute="trailing" secondItem="e05-Xm-zJe" secondAttribute="trailing" constant="20" id="vne-kF-6ih"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fct-g6-CQe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2H-Hc-aeP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926.0869565217392" y="131.91964285714286"/>
+        </scene>
+    </scenes>
+</document>

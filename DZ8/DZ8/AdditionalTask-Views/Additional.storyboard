@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HMw-0I-mm2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Additional-->
+        <scene sceneID="fdc-j1-Alt">
+            <objects>
+                <viewController id="HMw-0I-mm2" customClass="AdditionalTaskViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6CP-6R-OJk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ3-np-1Es">
+                                <rect key="frame" x="0.0" y="114" width="414" height="699"/>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad3-U0-4Lx" customClass="CustomButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="172" y="84" width="70" height="30"/>
+                                <state key="normal" title="Включить"/>
+                                <connections>
+                                    <action selector="secondButtonTapped" destination="HMw-0I-mm2" eventType="touchUpInside" id="VAW-Jo-54U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WI-SW-qWz" customClass="CustomButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="326" y="84" width="68" height="30"/>
+                                <state key="normal" title="Заглушка"/>
+                                <connections>
+                                    <action selector="thirdButtonTapped" destination="HMw-0I-mm2" eventType="touchUpInside" id="AYL-zB-caH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI5-gm-RPR" customClass="CustomButton" customModule="DZ8" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="70" height="30"/>
+                                <state key="normal" title="Включить"/>
+                                <connections>
+                                    <action selector="firstButtonTapped" destination="HMw-0I-mm2" eventType="touchUpInside" id="WUx-Mf-qOr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2WI-SW-qWz" firstAttribute="top" secondItem="8n2-r0-AtH" secondAttribute="top" constant="40" id="Auh-9s-t47"/>
+                            <constraint firstItem="xJ3-np-1Es" firstAttribute="top" secondItem="2WI-SW-qWz" secondAttribute="bottom" id="HlH-MX-Eve"/>
+                            <constraint firstItem="GI5-gm-RPR" firstAttribute="leading" secondItem="8n2-r0-AtH" secondAttribute="leading" constant="20" id="QGH-AJ-r0m"/>
+                            <constraint firstItem="8n2-r0-AtH" firstAttribute="trailing" secondItem="xJ3-np-1Es" secondAttribute="trailing" id="Ra0-vF-LtO"/>
+                            <constraint firstItem="xJ3-np-1Es" firstAttribute="top" secondItem="ad3-U0-4Lx" secondAttribute="bottom" id="ViQ-yx-Emv"/>
+                            <constraint firstItem="GI5-gm-RPR" firstAttribute="top" secondItem="8n2-r0-AtH" secondAttribute="top" constant="40" id="Wfy-g3-BQd"/>
+                            <constraint firstItem="xJ3-np-1Es" firstAttribute="bottom" secondItem="8n2-r0-AtH" secondAttribute="bottom" id="Wn5-DK-bd0"/>
+                            <constraint firstItem="8n2-r0-AtH" firstAttribute="trailing" secondItem="2WI-SW-qWz" secondAttribute="trailing" constant="20" id="iWf-yu-TLx"/>
+                            <constraint firstItem="ad3-U0-4Lx" firstAttribute="centerX" secondItem="6CP-6R-OJk" secondAttribute="centerX" id="vWz-Kh-Mpb"/>
+                            <constraint firstItem="xJ3-np-1Es" firstAttribute="centerX" secondItem="ad3-U0-4Lx" secondAttribute="centerX" id="zfb-sD-xdE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8n2-r0-AtH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Additional" id="CdJ-Co-7GC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="containerView" destination="xJ3-np-1Es" id="eTk-gV-HLx"/>
+                        <outlet property="firstButton" destination="GI5-gm-RPR" id="KhA-FA-IPZ"/>
+                        <outlet property="secondButton" destination="ad3-U0-4Lx" id="cga-24-vBZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebh-pk-q43" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-230.43478260869566" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+</document>
