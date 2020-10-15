@@ -22,10 +22,8 @@ class GalleryViewController: UIViewController {
         
         view.backgroundColor = Colors.backgroundColor
         
-        if let unwrappedImageView = galleryImageView {
-            unwrappedImageView.contentMode = .scaleAspectFit
-            unwrappedImageView.image = UIImage(named: imageNameArray[0])
-        }
+        galleryImageView.contentMode = .scaleAspectFit
+        galleryImageView.image = UIImage(named: imageNameArray[0])
     }
     
     @IBAction func backButtonTap() {

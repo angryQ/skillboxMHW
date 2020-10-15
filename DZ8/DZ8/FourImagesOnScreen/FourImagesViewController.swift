@@ -17,10 +17,14 @@ class FourImagesViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = Colors.backgroundColor
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
-        //Устанавливаю размер и положение вью, вычитаю из ширины по 20 точек слева и справа, и от высоты нижний
-        //и верхний отступ и приблизительную высоту таббара
-        holderView.frame = CGRect(x: 20, y: 20, width: self.view.frame.width - 40, height: self.view.frame.height - 80)
+        //Устанавливаю размер и положение вью, вычитаю из ширины по 20 точек слева и справа, и от высоты высоту таббара
+        holderView.frame = CGRect(x: 20, y: 20, width: self.view.bounds.width - 40, height: self.view.bounds.height - (self.tabBarController?.tabBar.bounds.height)!)
+        
         holderView.backgroundColor = Colors.backgroundColor
         
         addImagesToView()
@@ -32,10 +36,7 @@ class FourImagesViewController: UIViewController {
         var startIndexInSubArray = 0 //начальный индекс в срезе элементов массива для прохождения по нему циклом
         var endIndexInSubArray = 1 //конечный индекс в срезе элементов массива для прохождения по нему циклом
         
-        //Не разобралась как вычислить высоту таббара без его аутлета, который не могу добавить в этот вью контроллер,
-        //поэтому использовала приблизительное значение
-        let tabBarHeight: CGFloat = 40
-        let holderViewHeightWithoutTabbar = holderView.bounds.height - tabBarHeight //высота вью без таббара
+        let holderViewHeight = holderView.bounds.height
         
         let paddingUnderImage: CGFloat = 10 //отступ между картинкой и лэйблом
         let labelHeight: CGFloat = 20 //место под лэйбл
@@ -45,16 +46,9 @@ class FourImagesViewController: UIViewController {
         var yPos: CGFloat = 0 // "у" для отсчета позиции элемента
         var xPos: CGFloat = 0 // "х" для точки отсчета позиции элемента
         
-        
-        /*Высота и ширина картинки. С высотой какая-то проблема, так и не поняла откуда берутся лишние точки.
-        Например, получила высоту вью holderView.bounds.height, вижу ее полностью на экране, делю ее высоту напополам
-         и получаю высоту одной строки. Из получившейся высоты строки вычитаю высоту лэйбла и отступы под картинкой
-         и лэйблом, оставшаяся часть от высоты строки идет на высоту картинки, но почему-то картинки не помещаются
-         во вью. Не поняла что я считаю не так и что не учитываю. В итоге пришлось вычитать из heightPerItem
-         еще 50 чтобы все поместилось */
         let widthPerItem = holderView.bounds.width / countOfRowsOnScreen - verticalPadding
-        let heightPerItem = holderViewHeightWithoutTabbar / countOfRowsOnScreen - paddingUnderImage - labelHeight
-            - paddingUnderLabel - 50
+        let heightPerItem = holderViewHeight / countOfRowsOnScreen - paddingUnderImage - labelHeight
+            - paddingUnderLabel
         
         //Проходим по всему массиву элементов, беря по 2 элемента и формируя из них строку из двух элементов
         while endIndexInSubArray < store.images.count {
@@ -78,7 +72,7 @@ class FourImagesViewController: UIViewController {
                 xPos = holderView.frame.width / countOfRowsOnScreen + verticalPadding
             }
             //Устанавливаем "х" в первую колонку, а "у" на вторую строку
-            yPos = holderViewHeightWithoutTabbar / countOfRowsOnScreen
+            yPos = holderViewHeight / countOfRowsOnScreen
             xPos = 0
             
             startIndexInSubArray += 2

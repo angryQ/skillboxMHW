@@ -11,23 +11,36 @@ import UIKit
 //Класс, который управляет другими вью контроллерами, которые будут отображать контент моей презентации
 class PageViewController: UIPageViewController {
     
-    let presentScreenContent = ["На первой табе находится первое д/з с галереей",
-                                "На второй табе находится д/з с отображением четырех изображений на одном экране",
-                                "На третьей табе д/з с использованием UISegmentedControl",
-                                "На четвертой табе реализация Container View Controller (дополнительное д/з за 7 модуль)",
-                                "А вся эта презентация демонстрирует применение UIPageViewController (дополнительное д/з за 7 модуль)"
+    //Благодаря структуре стало проще добавлять, редактировать и удалять страницы для PageViewController, менять их порядок
+    struct OnboardingPage {
         
-    ]
-    let imageNameArray = ["pic-2","pic-5","pic-9","pic-6","autumn"]
-    let buttonIsHidden = [true, true, true, true, false]
-    let pageControlIsHidden = [false, false, false, false, true]
+        let content: String
+        let imageName: String
+        
+        init(content: String, imageName: String){
+            self.content = content
+            self.imageName = imageName
+        }
+    }
+    
+    var pageArray: [OnboardingPage] = []
+    
+    let pageOne = OnboardingPage(content: "На первой табе находится первое д/з с галереей", imageName: "pic-2")
+    let pageTwo = OnboardingPage(content: "На второй табе находится д/з с отображением четырех изображений на одном экране",
+                                 imageName: "pic-5")
+    let pageThree = OnboardingPage(content: "На третьей табе д/з с использованием UISegmentedControl", imageName: "pic-9")
+    let pageFour = OnboardingPage(content: "На четвертой табе реализация Container View Controller (дополнительное д/з за 7 модуль)",
+                                  imageName: "pic-6")
+    let pageFive = OnboardingPage(content: "А вся эта презентация демонстрирует применение UIPageViewController (дополнительное д/з за 7 модуль)", imageName: "autumn")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
+        pageArray = [pageOne, pageTwo, pageThree, pageFour, pageFive]
         
-        if let contentViewController = showViewControllerAtIndex(0) {
+        if let contentViewController = createViewControllerAtIndex(0) {
             
             //метод который создает массив из view controller'ов
             setViewControllers([contentViewController], direction: .forward, animated: true, completion: nil)
@@ -35,22 +48,18 @@ class PageViewController: UIPageViewController {
     }
     
     //Метод который позволяет нам создать view controller
-    func showViewControllerAtIndex(_ index: Int) -> ContentViewController? {
+    func createViewControllerAtIndex(_ index: Int) -> ContentViewController? {
         
-        guard index >= 0 else { return nil }
-        
-        guard index < presentScreenContent.count else { return nil }
+        guard index >= 0 && index < pageArray.count else { return nil }
         
         guard let contentViewController = storyboard?.instantiateViewController(
             withIdentifier: "ContentViewController") as? ContentViewController  else { return nil }
         
-        contentViewController.presentText = presentScreenContent[index]
-        contentViewController.imageName = imageNameArray[index]
+        contentViewController.presentText = pageArray[index].content
+        contentViewController.imageName = pageArray[index].imageName
         
-        contentViewController.numberOfPages = presentScreenContent.count
+        contentViewController.numberOfPages = pageArray.count
         contentViewController.currentPage = index
-        contentViewController.pageControlIsHidden = pageControlIsHidden[index]
-        contentViewController.startButtonIsHidden = buttonIsHidden[index]
         
         return contentViewController
     }
@@ -64,7 +73,7 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         var pageNumber = (viewController as! ContentViewController).currentPage
         pageNumber -= 1
         
-        return showViewControllerAtIndex(pageNumber)
+        return createViewControllerAtIndex(pageNumber)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
@@ -73,6 +82,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         var pageNumber = (viewController as! ContentViewController).currentPage
         pageNumber += 1
         
-        return showViewControllerAtIndex(pageNumber)
+        return createViewControllerAtIndex(pageNumber)
     }
 }

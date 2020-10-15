@@ -36,7 +36,7 @@ class AdditionalTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Colors.backgroundColor
+        view.backgroundColor = Colors.backgroundColor//
     }
     
     @IBAction func firstButtonTapped() {

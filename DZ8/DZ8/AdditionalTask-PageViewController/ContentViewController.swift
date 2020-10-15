@@ -16,7 +16,6 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var startButton: UIButton!
     
-    var window: UIWindow?
     var presentText = ""
     var imageName = ""
     var currentPage = 0
@@ -31,16 +30,17 @@ class ContentViewController: UIViewController {
         startButton.isHidden = true
         presentTextLabel.text = presentText
         
-        if let unwrappedImageView = imageView {
-            unwrappedImageView.layer.cornerRadius = (self.view.frame.width - 120) / 2
-            unwrappedImageView.layer.masksToBounds = true
-            unwrappedImageView.contentMode = .scaleAspectFill
-            unwrappedImageView.image = UIImage(named: imageName)
-        }
+        imageView.layer.cornerRadius = (self.view.frame.width - 120) / 2
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: imageName)
+        
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = currentPage
-        pageControl.isHidden = pageControlIsHidden
-        startButton.isHidden = startButtonIsHidden
+        if currentPage == numberOfPages - 1 {
+            pageControl.isHidden = true
+            startButton.isHidden = false
+        }
     }
     
     @IBAction func startWatchHomeWork() {
@@ -50,20 +50,12 @@ class ContentViewController: UIViewController {
         if let mainViewController = mainStoryboard.instantiateViewController(
             withIdentifier: "TabBar") as? UITabBarController {
             
-            window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = mainViewController
-            window?.makeKeyAndVisible()
+            guard let window = view.window else { return }
             
-            /*Как правильно выходить из PаgeViewController'а? При использовании кода ниже,
-             PageViewController продолжает отображаться на экране, просто скрыт раснятуным на весь экран
-             модальным окном, и это не очень хорошо. При попытке удалить его из памяти, также и удаляется
-             модальное окно с TabBarController'ом (mainViewController). В итоге я создала еще один UIWindow,
-             и как я поняла UIApplication может содержать несколько UIWindow, а тогда как система поняла что нужно
-             отобразить новое окно и что стало с предыдущим?
-             
-             mainViewController.modalPresentationStyle = .fullScreen
-             present(mainViewController, animated: true, completion: nil)
-             */
+            window.rootViewController = mainViewController
+            let options: UIView.AnimationOptions = .transitionCrossDissolve
+            let duration: TimeInterval = 0.2
+            UIView.transition(with: window, duration: duration, options: options, animations: nil)
         }
     }
 }
