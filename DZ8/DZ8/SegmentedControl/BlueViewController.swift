@@ -12,6 +12,7 @@ class BlueViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .blue
     }
     
     @IBAction func didButtonOneTap(_ sender: Any) {

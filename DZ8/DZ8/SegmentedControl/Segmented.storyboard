@@ -20,7 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9O6-k9-2Tw">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="kXj-4H-UFe" customClass="CustomSegmentedControl" customModule="DZ8" customModuleProvider="target">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="kXj-4H-UFe" customClass="CustomSegmentedControl" customModule="DZ8" customModuleProvider="target">
                             <rect key="frame" x="57.5" y="5.5" width="299" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -46,7 +46,7 @@
         <!--Задание 3-->
         <scene sceneID="tx2-3K-IGJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lU7-rC-BPW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SegmentedNC" automaticallyAdjustsScrollViewInsets="NO" id="lU7-rC-BPW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Задание 3" id="6lr-t0-A72"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rHc-MW-yV3"/>

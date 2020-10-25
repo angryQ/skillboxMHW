@@ -15,6 +15,7 @@ class GreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemGreen
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

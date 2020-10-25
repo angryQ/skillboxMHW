@@ -11,7 +11,7 @@
         <!--Задание 1-->
         <scene sceneID="6C2-Ie-AWn">
             <objects>
-                <viewController storyboardIdentifier="GalleryStoryboard" id="vf5-Le-C8M" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryID" id="vf5-Le-C8M" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tk5-XD-pcE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

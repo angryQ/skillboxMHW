@@ -9,6 +9,7 @@
 import UIKit
 
 //Класс-шаблон, в который PageViewController будет подставлять для каждой отдельной страницы уникальные данные
+
 class ContentViewController: UIViewController {
     
     @IBOutlet weak var presentTextLabel: UILabel!
@@ -45,17 +46,6 @@ class ContentViewController: UIViewController {
     
     @IBAction func startWatchHomeWork() {
         
-        let mainStoryboard = UIStoryboard (name: "Main", bundle: nil)
-        
-        if let mainViewController = mainStoryboard.instantiateViewController(
-            withIdentifier: "TabBar") as? UITabBarController {
-            
-            guard let window = view.window else { return }
-            
-            window.rootViewController = mainViewController
-            let options: UIView.AnimationOptions = .transitionCrossDissolve
-            let duration: TimeInterval = 0.2
-            UIView.transition(with: window, duration: duration, options: options, animations: nil)
-        }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController()
     }
 }
