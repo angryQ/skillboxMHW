@@ -42,17 +42,12 @@ class CustomButton: UIButton {
     
     func styleButton() {
         setTitleColor(Colors.lightGray2, for: .normal)
-        
         backgroundColor = Colors.orange
         titleLabel?.font = UIFont(name: Fonts.medium, size: 14)
         layer.cornerRadius = 10
-        //layer.borderWidth = 2.0
-        //layer.borderColor = UIColor.black.cgColor
     }
     func sizeButton() {
-        //titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width - 60) / 3).isActive = true
         heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
@@ -67,7 +62,7 @@ class CustomBigButton: CustomButton {
     }
     override func sizeButton() {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(greaterThanOrEqualToConstant: UIScreen.main.bounds.width / 2 - 40).isActive = true
+        //widthAnchor.constraint(greaterThanOrEqualToConstant: UIScreen.main.bounds.width / 2 - 40).isActive = true
         heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
@@ -87,7 +82,7 @@ class CustomSegmentedControl: UISegmentedControl {
     func styleControl(){
         
         selectedSegmentIndex = 0
-        
+
         layer.backgroundColor = Colors.darkGray.cgColor
         layer.borderColor = Colors.darkGray.cgColor
         layer.cornerRadius = 10

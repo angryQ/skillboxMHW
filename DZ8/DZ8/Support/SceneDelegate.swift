@@ -14,12 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds )// UIScreen.main.bounds
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
@@ -30,30 +27,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             let launchStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
             vc = launchStoryboard.instantiateViewController(withIdentifier: "PageViewController")
-            
         }
         
         UserDefaults.standard.set(true, forKey: "hasLaunched")
-        
-        /*
-         let conVC = ContainerViewController()
-         let storyboard = UIStoryboard(name: "Gallery", bundle: nil)
-         let galleryController = storyboard.instantiateViewController(identifier: "GalleryID")
-         
-         let buttonTitle = "Выключить"
-         conVC.addVC(GreenViewController(), buttonTitle: buttonTitle)
-         conVC.addVC(BlueViewController(), buttonTitle: buttonTitle)
-         conVC.addVC(galleryController, buttonTitle: buttonTitle)
-         
-         let defaultVC = PurpleViewController()
-         conVC.setDefaultPlaceholder(defaultVC)
-         */
-        
-        
-        //window?.rootViewController = conVC
+       
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
+    
     func createTabbar() -> UITabBarController {
         
         let tabBar = UITabBarController()
@@ -68,42 +49,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createGalleryViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Gallery", bundle: nil)
-        let galleryVC = storyboard.instantiateViewController(identifier: "GalleryID")
-        galleryVC.tabBarItem =  UITabBarItem(title: "Task #1", image: nil, tag: 0)
+        let galleryVC = initiateVC(storyboardName: "Gallery", storyboardID: "GalleryViewController")
         
-        return galleryVC
+        let conVC = ContainerViewController()
+        conVC.tabBarItem =  UITabBarItem(title: "Task #1", image: nil, tag: 0)
+        conVC.addVC(galleryVC)
+        
+        return conVC
     }
     
     func createFourImagesViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "FourImages", bundle: nil)
-        let fourImagesVC = storyboard.instantiateViewController(identifier: "ImagesInLoop")
+        let fourImagesVC = initiateVC(storyboardName: "FourImages", storyboardID: "FourImagesViewController")
         
         let conVC = ContainerViewController()
-       // let buttonTitle = "Выключить"
         conVC.tabBarItem = UITabBarItem(title: "Task #2", image: nil, tag: 1)
-        conVC.addVC(fourImagesVC, buttonTitle: nil)
+        conVC.addVC(fourImagesVC)
         
         return conVC
     }
     
     func createSegmentedViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Segmented", bundle: nil)
-        let segmentedVC = storyboard.instantiateViewController(identifier: "SegmentedNC")
-        segmentedVC.tabBarItem = UITabBarItem(title: "Task #3", image: nil, tag: 2)
+        let segmentedVC = initiateVC(storyboardName: "Segmented", storyboardID: "SegmentedNC")
         
-        return segmentedVC
+        let conVC = ContainerViewController()
+        conVC.tabBarItem = UITabBarItem(title: "Task #3", image: nil, tag: 2)
+        conVC.addVC(segmentedVC)
+        
+        return conVC
     }
     
     func createContainerViewController() -> UIViewController {
+        let greenVC = initiateVC(storyboardName: "Green", storyboardID: "GreenViewController")
+        let blueVC =  initiateVC(storyboardName: "Blue", storyboardID: "BlueViewController")
+        let defaultVC = initiateVC(storyboardName: "Purple", storyboardID: "PurpleViewController")
+        
         let conVC = ContainerViewController()
         let buttonTitle = "Выключить"
         
-        conVC.addVC(GreenViewController(), buttonTitle: buttonTitle)
-        conVC.addVC(BlueViewController(), buttonTitle: buttonTitle)
-        //conVC.addVC(PurpleViewController(), buttonTitle: buttonTitle)
-        
-        let defaultVC = PurpleViewController()
+        conVC.addVC(greenVC, buttonTitle: buttonTitle)
+        conVC.addVC(blueVC, buttonTitle: buttonTitle)
         conVC.setDefaultPlaceholder(defaultVC)
         
         conVC.tabBarItem = UITabBarItem(title: "Additional", image: nil, tag: 3)
@@ -111,18 +95,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return conVC
     }
     
-    func createGreenViewController() -> UIViewController {
-        let greenVC = GreenViewController()
-        greenVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 5)
+    func initiateVC(storyboardName: String, storyboardID: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: storyboardID)
         
-        return greenVC
+        return vc
     }
     
-    func createBlueViewController() -> UIViewController {
-        let blueVC = BlueViewController()
-        blueVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+    //Используется для смены root контроллера после просмотра onboarding презентации
+    func changeRootViewController(animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
         
-        return blueVC
+        window.rootViewController = createTabbar()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -152,14 +138,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-    func changeRootViewController(animated: Bool = true) {
-        guard let window = self.window else {
-            return
-        }
-        
-        window.rootViewController = createTabbar()
-    }
-    
-    
 }

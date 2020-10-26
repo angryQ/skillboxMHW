@@ -11,7 +11,7 @@
         <!--Задание 1-->
         <scene sceneID="6C2-Ie-AWn">
             <objects>
-                <viewController storyboardIdentifier="GalleryID" id="vf5-Le-C8M" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryViewController" id="vf5-Le-C8M" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tk5-XD-pcE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,14 +20,14 @@
                                 <rect key="frame" x="20" y="84" width="374" height="510"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjb-Sy-3ik" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
-                                <rect key="frame" x="20" y="683" width="45" height="30"/>
+                                <rect key="frame" x="20" y="683" width="177" height="30"/>
                                 <state key="normal" title="Назад"/>
                                 <connections>
                                     <action selector="backButtonTap" destination="vf5-Le-C8M" eventType="touchUpInside" id="iiB-vu-jC1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DK-P3-8x3" customClass="CustomBigButton" customModule="DZ8" customModuleProvider="target">
-                                <rect key="frame" x="338" y="683" width="56" height="30"/>
+                                <rect key="frame" x="217" y="683" width="177" height="30"/>
                                 <state key="normal" title="Дальше"/>
                                 <connections>
                                     <action selector="nextButtonTap" destination="vf5-Le-C8M" eventType="touchUpInside" id="bup-8y-uRU"/>
@@ -38,7 +38,9 @@
                             <constraint firstItem="Ak7-cx-FD1" firstAttribute="trailing" secondItem="2hB-vb-Fz2" secondAttribute="trailing" constant="20" id="BS5-65-mm6"/>
                             <constraint firstItem="1DK-P3-8x3" firstAttribute="top" secondItem="2hB-vb-Fz2" secondAttribute="bottom" constant="89" id="Ck1-0L-l2E"/>
                             <constraint firstItem="Ak7-cx-FD1" firstAttribute="bottom" secondItem="1DK-P3-8x3" secondAttribute="bottom" constant="100" id="DYB-OE-n40"/>
+                            <constraint firstItem="1DK-P3-8x3" firstAttribute="leading" secondItem="Yjb-Sy-3ik" secondAttribute="trailing" constant="20" id="K7E-bd-G9T"/>
                             <constraint firstItem="Ak7-cx-FD1" firstAttribute="bottom" secondItem="Yjb-Sy-3ik" secondAttribute="bottom" constant="100" id="QyI-Ii-f3g"/>
+                            <constraint firstItem="Yjb-Sy-3ik" firstAttribute="width" secondItem="1DK-P3-8x3" secondAttribute="width" id="a9E-sJ-8eR"/>
                             <constraint firstItem="2hB-vb-Fz2" firstAttribute="leading" secondItem="Ak7-cx-FD1" secondAttribute="leading" constant="20" id="cGB-2v-4qL"/>
                             <constraint firstItem="2hB-vb-Fz2" firstAttribute="top" secondItem="Ak7-cx-FD1" secondAttribute="top" constant="40" id="f74-rR-Ber"/>
                             <constraint firstItem="Yjb-Sy-3ik" firstAttribute="leading" secondItem="Ak7-cx-FD1" secondAttribute="leading" constant="20" id="r5T-xJ-xrU"/>

@@ -10,29 +10,24 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-   lazy var buttonsStackView = UIStackView()
+    lazy var buttonsStackView = UIStackView()
     var childVCStackView = UIStackView()
     var holderStackView = UIStackView()
     
-    var buttonIsSelected = false
     private var childs: [UIViewController] = []
     private var defaultVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
+        view.backgroundColor = Colors.backgroundColor
         view.addSubview(holderStackView)
-        holderStackView.addArrangedSubview(childVCStackView)
-        configureHolderStackView()
-        configureViewsStackView()
-        //self.view.addSubview(buttonsStackView)
-        
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-    
+        
+        configureHolderStackView()
+        configureViewsStackView()
     }
     
     func addVC(_ vc: UIViewController, buttonTitle: String? = nil) {
@@ -42,7 +37,7 @@ class ContainerViewController: UIViewController {
         
         childs.append(vc)
         addChildVC(childVC: vc)
-        
+        holderStackView.addArrangedSubview(childVCStackView)
         
         guard let buttonTitle = buttonTitle else { return }
         let button = createAButton(buttonTitle: buttonTitle)
@@ -50,7 +45,6 @@ class ContainerViewController: UIViewController {
         
         holderStackView.insertArrangedSubview(buttonsStackView, at: 0)
         configureButtonsStackView()
-        self.view.layoutIfNeeded()
     }
     
     func addButtonToStackView(_ button: UIButton) {
@@ -60,11 +54,13 @@ class ContainerViewController: UIViewController {
     func createAButton(buttonTitle: String) -> UIButton {
         let button = UIButton()
         button.setTitle(buttonTitle, for: .normal)
+        button.backgroundColor = Colors.orange
+        button.titleLabel?.font = UIFont(name: Fonts.medium, size: 14)
+        button.layer.cornerRadius = 10
+        let selector = #selector(ContainerViewController.showHideContentVC2)
+        button.addTarget(self, action: selector, for: UIControl.Event.touchUpInside)
         button.isUserInteractionEnabled = true
         button.isEnabled = true
-        button.backgroundColor = .blue
-        let selector = #selector(ContainerViewController.showHideContentVC)
-        button.addTarget(self, action: selector, for: UIControl.Event.touchUpInside)
         
         return button
     }
@@ -74,7 +70,7 @@ class ContainerViewController: UIViewController {
         defaultVC = vc
     }
     
-    @IBAction func showHideContentVC(sender: UIButton) {
+    @IBAction func showHideContentVC2(sender: UIButton) {
         // Показываем или скрываем контент контроллер, который соответствует кнопке
         // Если все контент контроллеры скрыты, то показываем placeholder
         
@@ -113,20 +109,17 @@ class ContainerViewController: UIViewController {
     func configureButtonsStackView() {
         
         buttonsStackView.axis = .horizontal
-        buttonsStackView.layer.backgroundColor = UIColor.cyan.cgColor
         buttonsStackView.distribution = .fillEqually
+        buttonsStackView.alignment = .fill
         buttonsStackView.spacing = 20
-        buttonsStackView.isHidden = false
-        
-        let topConstraint = buttonsStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
-        //       let bottomConstraint = buttonsStackView.bottomAnchor.constraint(equalTo: childVCStackView.topAnchor, constant: 20).isActive = true
-        let leadingConstraint = buttonsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
-        let trailingConstraint = buttonsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
-        
-        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint])
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsStackView.isLayoutMarginsRelativeArrangement = true
+        buttonsStackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+       
     }
+    
     func configureViewsStackView() {
-        var topConstraint = childVCStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        
         if childVCStackView.subviews.count == 0 {
             guard let vc = defaultVC else {return}
             addChildVC(childVC: vc)
@@ -136,36 +129,22 @@ class ContainerViewController: UIViewController {
         childVCStackView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         childVCStackView.distribution = .fillEqually
         childVCStackView.alignment = .fill
-        childVCStackView.layer.backgroundColor = UIColor.red.cgColor
-        
         childVCStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        if holderStackView.subviews.contains(buttonsStackView)
-        {
-            topConstraint = childVCStackView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 100)
-        }
-        
-        let bottomConstraint = childVCStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20)
-        let leadingConstraint = childVCStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0)
-        let trailingConstraint = childVCStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
-        
-        
-        NSLayoutConstraint.activate([topConstraint, bottomConstraint, trailingConstraint, leadingConstraint])
-        
+ 
     }
     func configureHolderStackView() {
+        
         holderStackView.axis = .vertical
         holderStackView.distribution = .fill
         holderStackView.alignment = .fill
         holderStackView.spacing = 20
-        holderStackView.layer.backgroundColor = UIColor.yellow.cgColor
+        holderStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        let topConstraint = holderStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        let bottomConstraint = holderStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        let topConstraint = holderStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        let bottomConstraint = holderStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20)
         let leadingConstraint = holderStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0)
         let trailingConstraint = holderStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
         
-        
-        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint])
+        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
 }
