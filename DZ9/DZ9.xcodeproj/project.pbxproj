@@ -13,6 +13,8 @@
 		6A91D1942548963900500FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1922548963900500FA3 /* Main.storyboard */; };
 		6A91D1962548963B00500FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1952548963B00500FA3 /* Assets.xcassets */; };
 		6A91D1992548963B00500FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1972548963B00500FA3 /* LaunchScreen.storyboard */; };
+		6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A0254896D800500FA3 /* Task-A.storyboard */; };
+		6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A225489E5500500FA3 /* Task-A2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6A91D1952548963B00500FA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A91D1982548963B00500FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A91D19A2548963B00500FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A91D1A0254896D800500FA3 /* Task-A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A.storyboard"; sourceTree = "<group>"; };
+		6A91D1A225489E5500500FA3 /* Task-A2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A2.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				6A91D1952548963B00500FA3 /* Assets.xcassets */,
 				6A91D1972548963B00500FA3 /* LaunchScreen.storyboard */,
 				6A91D19A2548963B00500FA3 /* Info.plist */,
+				6A91D1A0254896D800500FA3 /* Task-A.storyboard */,
+				6A91D1A225489E5500500FA3 /* Task-A2.storyboard */,
 			);
 			path = DZ9;
 			sourceTree = "<group>";
@@ -126,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A91D1992548963B00500FA3 /* LaunchScreen.storyboard in Resources */,
+				6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */,
+				6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */,
 				6A91D1962548963B00500FA3 /* Assets.xcassets in Resources */,
 				6A91D1942548963900500FA3 /* Main.storyboard in Resources */,
 			);
