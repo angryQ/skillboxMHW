@@ -15,6 +15,7 @@
 		6A91D1992548963B00500FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1972548963B00500FA3 /* LaunchScreen.storyboard */; };
 		6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A0254896D800500FA3 /* Task-A.storyboard */; };
 		6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A225489E5500500FA3 /* Task-A2.storyboard */; };
+		6A91D1A52548A44100500FA3 /* Task-B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A42548A44100500FA3 /* Task-B.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6A91D19A2548963B00500FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A91D1A0254896D800500FA3 /* Task-A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A.storyboard"; sourceTree = "<group>"; };
 		6A91D1A225489E5500500FA3 /* Task-A2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A2.storyboard"; sourceTree = "<group>"; };
+		6A91D1A42548A44100500FA3 /* Task-B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-B.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				6A91D19A2548963B00500FA3 /* Info.plist */,
 				6A91D1A0254896D800500FA3 /* Task-A.storyboard */,
 				6A91D1A225489E5500500FA3 /* Task-A2.storyboard */,
+				6A91D1A42548A44100500FA3 /* Task-B.storyboard */,
 			);
 			path = DZ9;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			files = (
 				6A91D1992548963B00500FA3 /* LaunchScreen.storyboard in Resources */,
 				6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */,
+				6A91D1A52548A44100500FA3 /* Task-B.storyboard in Resources */,
 				6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */,
 				6A91D1962548963B00500FA3 /* Assets.xcassets in Resources */,
 				6A91D1942548963900500FA3 /* Main.storyboard in Resources */,
