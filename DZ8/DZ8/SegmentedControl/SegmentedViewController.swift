@@ -66,12 +66,12 @@ class SegmentedViewController: UIViewController {
     private func addConstraintsToSubview(subview: UIView) {
         
         subview.translatesAutoresizingMaskIntoConstraints = false
-        let topConstraint = subview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
-        let bottomConstraint = subview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
-        let leadingConstraint = subview.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0)
-        let trailingConstraint = subview.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
-        
-        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
+        NSLayoutConstraint.activate([
+            subview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            subview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            subview.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            subview.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
     }
 }
 

@@ -23,8 +23,7 @@ class FourImagesViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         //Устанавливаю размер и положение вью, вычитаю из ширины по 20 точек слева и справа, и от высоты высоту таббара
-        holderView.frame = CGRect(x: 20, y: 20, width: self.view.bounds.width - 40, height: self.view.bounds.height - (self.tabBarController?.tabBar.bounds.height)!)
-        
+        holderView.frame = CGRect(x: 20, y: 20, width: self.view.bounds.width - 40, height: self.view.safeAreaLayoutGuide.layoutFrame.height - (self.tabBarController?.tabBar.frame.size.height)!)
         holderView.backgroundColor = Colors.backgroundColor
         
         addImagesToView()

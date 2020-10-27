@@ -50,32 +50,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createGalleryViewController() -> UIViewController {
         let galleryVC = initiateVC(storyboardName: "Gallery", storyboardID: "GalleryViewController")
+        galleryVC.tabBarItem =  UITabBarItem(title: "Task #1", image: nil, tag: 0)
         
-        let conVC = ContainerViewController()
-        conVC.tabBarItem =  UITabBarItem(title: "Task #1", image: nil, tag: 0)
-        conVC.addVC(galleryVC)
-        
-        return conVC
+        return galleryVC
     }
     
     func createFourImagesViewController() -> UIViewController {
         let fourImagesVC = initiateVC(storyboardName: "FourImages", storyboardID: "FourImagesViewController")
+        fourImagesVC.tabBarItem = UITabBarItem(title: "Task #2", image: nil, tag: 1)
         
-        let conVC = ContainerViewController()
-        conVC.tabBarItem = UITabBarItem(title: "Task #2", image: nil, tag: 1)
-        conVC.addVC(fourImagesVC)
-        
-        return conVC
+        return fourImagesVC
     }
     
     func createSegmentedViewController() -> UIViewController {
         let segmentedVC = initiateVC(storyboardName: "Segmented", storyboardID: "SegmentedNC")
+        segmentedVC.tabBarItem = UITabBarItem(title: "Task #3", image: nil, tag: 2)
         
-        let conVC = ContainerViewController()
-        conVC.tabBarItem = UITabBarItem(title: "Task #3", image: nil, tag: 2)
-        conVC.addVC(segmentedVC)
-        
-        return conVC
+        return segmentedVC
     }
     
     func createContainerViewController() -> UIViewController {
@@ -84,12 +75,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let defaultVC = initiateVC(storyboardName: "Purple", storyboardID: "PurpleViewController")
         
         let conVC = ContainerViewController()
-        let buttonTitle = "Выключить"
-        
-        conVC.addVC(greenVC, buttonTitle: buttonTitle)
-        conVC.addVC(blueVC, buttonTitle: buttonTitle)
+        conVC.addVC(greenVC)
+        conVC.addVC(blueVC)
         conVC.setDefaultPlaceholder(defaultVC)
-        
         conVC.tabBarItem = UITabBarItem(title: "Additional", image: nil, tag: 3)
         
         return conVC

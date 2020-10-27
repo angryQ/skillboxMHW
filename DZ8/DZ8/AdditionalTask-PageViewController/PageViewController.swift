@@ -23,22 +23,18 @@ class PageViewController: UIPageViewController {
         }
     }
     
-    var pageArray: [OnboardingPage] = []
-    
-    let pageOne = OnboardingPage(content: "На первой табе находится первое д/з с галереей", imageName: "pic-2")
-    let pageTwo = OnboardingPage(content: "На второй табе находится д/з с отображением четырех изображений на одном экране",
-                                 imageName: "pic-5")
-    let pageThree = OnboardingPage(content: "На третьей табе д/з с использованием UISegmentedControl", imageName: "pic-9")
-    let pageFour = OnboardingPage(content: "На четвертой табе реализация Container View Controller (дополнительное д/з за 7 модуль)",
-                                  imageName: "pic-6")
-    let pageFive = OnboardingPage(content: "А вся эта презентация демонстрирует применение UIPageViewController (дополнительное д/з за 7 модуль)", imageName: "autumn")
-    
+    let pageArray = [OnboardingPage(content: "На первой табе находится первое д/з с галереей", imageName: "pic-2"),
+                     OnboardingPage(content: "На второй табе находится д/з с отображением четырех изображений на одном экране",
+                                    imageName: "pic-5"),
+                     OnboardingPage(content: "На третьей табе д/з с использованием UISegmentedControl", imageName: "pic-9"),
+                     OnboardingPage(content: "На четвертой табе реализация Container View Controller (дополнительное д/з за 7 модуль)", imageName: "pic-6"),
+                     OnboardingPage(content: "А вся эта презентация демонстрирует применение UIPageViewController (дополнительное д/з за 7 модуль)", imageName: "autumn")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
-        pageArray = [pageOne, pageTwo, pageThree, pageFour, pageFive]
         
         if let contentViewController = createViewControllerAtIndex(0) {
             

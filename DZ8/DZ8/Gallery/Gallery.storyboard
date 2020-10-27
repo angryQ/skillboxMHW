@@ -2,13 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vf5-Le-C8M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Задание 1-->
+        <!--Gallery View Controller-->
         <scene sceneID="6C2-Ie-AWn">
             <objects>
                 <viewController storyboardIdentifier="GalleryViewController" id="vf5-Le-C8M" customClass="GalleryViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +47,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ak7-cx-FD1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Задание 1" id="lcW-z1-F2J"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="galleryImageView" destination="2hB-vb-Fz2" id="HB9-NB-dsI"/>

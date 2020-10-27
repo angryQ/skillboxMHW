@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Задание 2-->
+        <!--Four Images View Controller-->
         <scene sceneID="atv-Jf-QzL">
             <objects>
                 <viewController storyboardIdentifier="FourImagesViewController" id="oxZ-Di-yvi" customClass="FourImagesViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TcI-4q-Qgn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Задание 2" id="7fN-M8-O13"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="holderView" destination="yHI-J8-ZgS" id="TBW-Oq-9Ts"/>
