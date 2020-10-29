@@ -16,6 +16,8 @@
 		6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A0254896D800500FA3 /* Task-A.storyboard */; };
 		6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A225489E5500500FA3 /* Task-A2.storyboard */; };
 		6A91D1A52548A44100500FA3 /* Task-B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A42548A44100500FA3 /* Task-B.storyboard */; };
+		6A91D1A72548ABFE00500FA3 /* Task-C.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1A62548ABFE00500FA3 /* Task-C.storyboard */; };
+		6A91D1A92548ACC000500FA3 /* TaskCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D1A82548ACC000500FA3 /* TaskCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6A91D1A0254896D800500FA3 /* Task-A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A.storyboard"; sourceTree = "<group>"; };
 		6A91D1A225489E5500500FA3 /* Task-A2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-A2.storyboard"; sourceTree = "<group>"; };
 		6A91D1A42548A44100500FA3 /* Task-B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-B.storyboard"; sourceTree = "<group>"; };
+		6A91D1A62548ABFE00500FA3 /* Task-C.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Task-C.storyboard"; sourceTree = "<group>"; };
+		6A91D1A82548ACC000500FA3 /* TaskCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				6A91D1A0254896D800500FA3 /* Task-A.storyboard */,
 				6A91D1A225489E5500500FA3 /* Task-A2.storyboard */,
 				6A91D1A42548A44100500FA3 /* Task-B.storyboard */,
+				6A91D1A62548ABFE00500FA3 /* Task-C.storyboard */,
+				6A91D1A82548ACC000500FA3 /* TaskCViewController.swift */,
 			);
 			path = DZ9;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 				6A91D1A325489E5500500FA3 /* Task-A2.storyboard in Resources */,
 				6A91D1A52548A44100500FA3 /* Task-B.storyboard in Resources */,
 				6A91D1A1254896D800500FA3 /* Task-A.storyboard in Resources */,
+				6A91D1A72548ABFE00500FA3 /* Task-C.storyboard in Resources */,
 				6A91D1962548963B00500FA3 /* Assets.xcassets in Resources */,
 				6A91D1942548963900500FA3 /* Main.storyboard in Resources */,
 			);
@@ -151,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A91D1912548963900500FA3 /* ViewController.swift in Sources */,
+				6A91D1A92548ACC000500FA3 /* TaskCViewController.swift in Sources */,
 				6A91D18D2548963900500FA3 /* AppDelegate.swift in Sources */,
 				6A91D18F2548963900500FA3 /* SceneDelegate.swift in Sources */,
 			);
