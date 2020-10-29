@@ -29,7 +29,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-P0-70l">
                                 <rect key="frame" x="50" y="94" width="314" height="30"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
+                                <color key="tintColor" red="0.34841031230000002" green="0.32677486960000002" blue="0.92270392180000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Свернуть/Развернуть лэйбл">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
