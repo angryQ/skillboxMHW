@@ -16,22 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-GW-kfd">
-                                <rect key="frame" x="20" y="74" width="374" height="548"/>
+                                <rect key="frame" x="20" y="74" width="374" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-FI-Xg1">
-                                <rect key="frame" x="270.5" y="722" width="123.5" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.46666666670000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Вперед">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="AbR-5d-po0"/>
-                                </connections>
-                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-R5-NuZ">
+                                <rect key="frame" x="48" y="662" width="318" height="31"/>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-4j-oaf">
-                                <rect key="frame" x="145" y="722" width="105.5" height="40"/>
+                                <rect key="frame" x="167" y="722" width="80" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="LnQ-81-elW"/>
                                     <constraint firstAttribute="height" constant="40" id="WrW-Ap-TTO"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,41 +36,24 @@
                                     <action selector="startButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGI-hB-FF5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkv-IP-5DC">
-                                <rect key="frame" x="20" y="722" width="105" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.46666666670000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Назад">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="86F-E0-GvD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTf-GW-kfd" secondAttribute="trailing" constant="20" id="6Xx-sr-8vZ"/>
                             <constraint firstItem="cTf-GW-kfd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6vP-2d-Nbb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e6W-4j-oaf" secondAttribute="bottom" constant="100" id="E4N-fW-vXC"/>
-                            <constraint firstItem="Qkv-IP-5DC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Kpf-Qb-ofX"/>
-                            <constraint firstItem="e6W-4j-oaf" firstAttribute="leading" secondItem="Qkv-IP-5DC" secondAttribute="trailing" constant="20" id="Lqn-aG-0Sp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FJH-FI-Xg1" secondAttribute="bottom" constant="100" id="Sjk-R5-PYL"/>
+                            <constraint firstItem="GeO-R5-NuZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ibf-Vr-plI"/>
+                            <constraint firstItem="e6W-4j-oaf" firstAttribute="centerX" secondItem="GeO-R5-NuZ" secondAttribute="centerX" id="QMw-KP-CI1"/>
+                            <constraint firstItem="GeO-R5-NuZ" firstAttribute="top" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="20" id="QZE-up-ZIo"/>
                             <constraint firstItem="cTf-GW-kfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U8u-y0-F4T"/>
-                            <constraint firstItem="FJH-FI-Xg1" firstAttribute="width" secondItem="Qkv-IP-5DC" secondAttribute="width" multiplier="1.17619" id="cTN-Am-fyd"/>
-                            <constraint firstItem="e6W-4j-oaf" firstAttribute="width" secondItem="FJH-FI-Xg1" secondAttribute="width" multiplier="0.854251" id="iRl-Q1-JCv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FJH-FI-Xg1" secondAttribute="trailing" constant="20" id="jLr-xm-BW9"/>
-                            <constraint firstItem="e6W-4j-oaf" firstAttribute="top" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="100" id="jUv-ck-bhR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qkv-IP-5DC" secondAttribute="bottom" constant="100" id="k45-CF-mRS"/>
-                            <constraint firstItem="FJH-FI-Xg1" firstAttribute="top" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="100" id="m8f-j4-mIK"/>
-                            <constraint firstItem="Qkv-IP-5DC" firstAttribute="top" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="100" id="vOa-jS-JNh"/>
-                            <constraint firstItem="FJH-FI-Xg1" firstAttribute="leading" secondItem="e6W-4j-oaf" secondAttribute="trailing" constant="20" id="yTO-CE-SQd"/>
+                            <constraint firstItem="e6W-4j-oaf" firstAttribute="top" secondItem="GeO-R5-NuZ" secondAttribute="bottom" constant="30" id="jUv-ck-bhR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GeO-R5-NuZ" secondAttribute="trailing" constant="50" id="rLC-3a-EU6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="galleryImageView" destination="cTf-GW-kfd" id="Wsp-BD-fpK"/>
-                        <outlet property="nextButton" destination="FJH-FI-Xg1" id="JQj-Ac-2zd"/>
-                        <outlet property="prevButton" destination="Qkv-IP-5DC" id="cxc-6r-CxQ"/>
+                        <outlet property="slider" destination="GeO-R5-NuZ" id="zxA-Ak-Q7S"/>
                         <outlet property="startButton" destination="e6W-4j-oaf" id="Gfd-PW-Phq"/>
                         <outlet property="view" destination="cTf-GW-kfd" id="MI7-63-gdU"/>
                     </connections>
