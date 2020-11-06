@@ -18,43 +18,63 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-GW-kfd">
                                 <rect key="frame" x="20" y="74" width="374" height="568"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-R5-NuZ">
-                                <rect key="frame" x="48" y="662" width="318" height="31"/>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-4j-oaf">
-                                <rect key="frame" x="167" y="722" width="80" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MQB-99-5Dy">
+                                <rect key="frame" x="20" y="700" width="374" height="112"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1su-uw-eae">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                        <color key="trackTintColor" red="0.94117647059999998" green="0.42352941179999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-Nu-UmR">
+                                        <rect key="frame" x="0.0" y="22" width="374" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-4j-oaf">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="LnQ-81-elW"/>
+                                                    <constraint firstAttribute="height" constant="40" id="WrW-Ap-TTO"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Старт">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGI-hB-FF5"/>
+                                                </connections>
+                                            </button>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qXH-ez-cPG">
+                                                <rect key="frame" x="280" y="0.0" width="94" height="40"/>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-R5-NuZ">
+                                        <rect key="frame" x="-2" y="82" width="378" height="31"/>
+                                    </slider>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="LnQ-81-elW"/>
-                                    <constraint firstAttribute="height" constant="40" id="WrW-Ap-TTO"/>
+                                    <constraint firstAttribute="height" constant="112" id="Ips-4K-6CT"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Старт">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGI-hB-FF5"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTf-GW-kfd" secondAttribute="trailing" constant="20" id="6Xx-sr-8vZ"/>
                             <constraint firstItem="cTf-GW-kfd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6vP-2d-Nbb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e6W-4j-oaf" secondAttribute="bottom" constant="100" id="E4N-fW-vXC"/>
-                            <constraint firstItem="GeO-R5-NuZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ibf-Vr-plI"/>
-                            <constraint firstItem="e6W-4j-oaf" firstAttribute="centerX" secondItem="GeO-R5-NuZ" secondAttribute="centerX" id="QMw-KP-CI1"/>
-                            <constraint firstItem="GeO-R5-NuZ" firstAttribute="top" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="20" id="QZE-up-ZIo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="220" id="FAM-8j-HRQ"/>
                             <constraint firstItem="cTf-GW-kfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U8u-y0-F4T"/>
-                            <constraint firstItem="e6W-4j-oaf" firstAttribute="top" secondItem="GeO-R5-NuZ" secondAttribute="bottom" constant="30" id="jUv-ck-bhR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GeO-R5-NuZ" secondAttribute="trailing" constant="50" id="rLC-3a-EU6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MQB-99-5Dy" secondAttribute="bottom" constant="50" id="Yqy-so-jTz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MQB-99-5Dy" secondAttribute="trailing" constant="20" id="e9v-kb-Cu7"/>
+                            <constraint firstItem="MQB-99-5Dy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g1y-AP-hVv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="galleryImageView" destination="cTf-GW-kfd" id="Wsp-BD-fpK"/>
+                        <outlet property="progressView" destination="1su-uw-eae" id="oHa-5h-ZZO"/>
                         <outlet property="slider" destination="GeO-R5-NuZ" id="zxA-Ak-Q7S"/>
                         <outlet property="startButton" destination="e6W-4j-oaf" id="Gfd-PW-Phq"/>
+                        <outlet property="stepper" destination="qXH-ez-cPG" id="pks-nb-pWm"/>
                         <outlet property="view" destination="cTf-GW-kfd" id="MI7-63-gdU"/>
                     </connections>
                 </viewController>

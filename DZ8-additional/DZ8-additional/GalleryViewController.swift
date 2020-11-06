@@ -13,12 +13,13 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var galleryImageView: UIImageView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var progressView: UIProgressView!
     
     let animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear)
     let visualEffectView = UIVisualEffectView(effect: nil)
-    let stepper = UIStepper()
     var currentPicIndex = 0
-    let duration: Double = 0.8
+    let duration: Double = 1.0
     
     var images = [UIImage(named: "pic-1")!, UIImage(named: "pic-2")!, UIImage(named: "pic-3")!, UIImage(named: "pic-4")!, UIImage(named: "pic-5")!, UIImage(named: "pic-6")!, UIImage(named: "pic-7")!, UIImage(named: "pic-8")!, UIImage(named: "pic-9")!, UIImage(named: "pic-10")!]
     
@@ -29,29 +30,30 @@ class GalleryViewController: UIViewController {
         view.backgroundColor = .white
         
         galleryImageView.image = images[0]
-        galleryImageView.contentMode = .scaleAspectFit
+        galleryImageView.contentMode = .scaleAspectFill
         galleryImageView.clipsToBounds = true
         startButton.setTitle("Стоп", for: .selected)
         slider.value = 0
         
         configureStepper()
         configureSlider()
-        
+        progressView.setProgress(0, animated: false)
         
         animator.addAnimations {
-            //self.galleryImageView.transform = CGAffineTransform(scaleX: 2, y: 2)
             self.visualEffectView.effect = UIBlurEffect(style: .extraLight)
         }
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         setupVisualBlurEffectView()
+        stepper.value = Double(currentPicIndex)
     }
     
-    @objc func stepperValueChanged(_ sender:UIStepper!)
-    {
+    @objc func stepperValueChanged(_ sender: UIStepper!) {
         self.galleryImageView.image = images[Int(sender.value)]
         currentPicIndex = Int(sender.value)
+        updateProgressView()
     }
     
     @IBAction func startButtonTap(_ sender: UIButton) {
@@ -60,8 +62,9 @@ class GalleryViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: duration, repeats: true) { timer in
             if sender.isSelected == true {
                 self.startAnimationFromImageWithIndex(self.currentPicIndex)
-                self.currentPicIndex += 1
+                self.updateProgressView()
                 
+                self.currentPicIndex += 1
                 if self.currentPicIndex > self.images.count - 1 {
                     self.currentPicIndex = 0
                 }
@@ -71,6 +74,13 @@ class GalleryViewController: UIViewController {
                 timer.invalidate()
             }
         }
+    }
+    func updateProgressView() {
+        //if self.progressView.progress != 1 {
+            self.progressView.progress =  0.1 * Float(currentPicIndex + 1)
+        //} else {
+            //self.progressView.progress = 0.1
+        //}
     }
     
     func stopAnimationOnImageWithIndex(_ index: Int) {
@@ -104,13 +114,15 @@ class GalleryViewController: UIViewController {
     
     func setupVisualBlurEffectView() {
         view.addSubview(visualEffectView)
-        //guard let height = galleryImageView.image?.size.height, let width = galleryImageView.image?.size.width else {return}
-        visualEffectView.frame = CGRect(x: 20, y: 20, width: galleryImageView.frame.width, height: galleryImageView.frame.height)
+        visualEffectView.frame = galleryImageView.frame
     }
     
     func configureStepper() {
-        stepper.setIncrementImage(UIImage(systemName: "bell"), for: .normal)
-        stepper.setDecrementImage(UIImage(systemName: "paperplane.fill"), for: .normal)
+        stepper.isHidden = false
+        let rightImage = UIImage(systemName: "play")
+        let leftImage = UIImage(cgImage: (rightImage?.cgImage)!, scale: CGFloat(1.8), orientation: .upMirrored)
+        stepper.setIncrementImage(rightImage, for: .normal)
+        stepper.setDecrementImage(leftImage, for: .normal)
         stepper.translatesAutoresizingMaskIntoConstraints = false
         stepper.autorepeat = true
         stepper.tintColor = UIColor.orange
@@ -118,13 +130,5 @@ class GalleryViewController: UIViewController {
         stepper.minimumValue = 0
         stepper.maximumValue = Double(images.count - 1)
         stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
-        self.view.addSubview(stepper)
-        
-        //let topConstraint = stepper.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20)
-        let bottomConstraint = stepper.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
-        let leadingConstraint = stepper.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 50)
-        let trailingConstraint = stepper.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -50)
-        
-        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, bottomConstraint])
     }
 }
