@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lU7-rC-BPW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Segmented View Controller-->
+        <scene sceneID="ueY-k5-WvZ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="xc0-j9-yNy" customClass="SegmentedViewController" customModule="DZ8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ppx-H8-Sxy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TVM-6w-lZg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9O6-k9-2Tw">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="kXj-4H-UFe" customClass="CustomSegmentedControl" customModule="DZ8" customModuleProvider="target">
+                            <rect key="frame" x="57.5" y="5.5" width="299" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Зеленый"/>
+                                <segment title="Синий"/>
+                                <segment title="Фиолетовый"/>
+                            </segments>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="segmentedControlIndexChangedWithSegment:" destination="xc0-j9-yNy" eventType="valueChanged" id="2m4-wv-bFB"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="kXj-4H-UFe" id="kIR-Tt-xfJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FbM-ps-ZqJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1695.6521739130435" y="287.94642857142856"/>
+        </scene>
+        <!--Задание 3-->
+        <scene sceneID="tx2-3K-IGJ">
+            <objects>
+                <navigationController storyboardIdentifier="SegmentedNC" automaticallyAdjustsScrollViewInsets="NO" id="lU7-rC-BPW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Задание 3" id="6lr-t0-A72"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rHc-MW-yV3"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RqK-MJ-vZE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xc0-j9-yNy" kind="relationship" relationship="rootViewController" id="kpj-ty-GLz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppL-31-EnU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785.50724637681162" y="287.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
