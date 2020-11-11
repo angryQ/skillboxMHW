@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bng-ji-aDs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task #1-->
+        <scene sceneID="b20-0S-qtY">
+            <objects>
+                <viewController id="bng-ji-aDs" customClass="GalleryViewController" customModule="DZ8_additional" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="lEv-bI-SeO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-wq-fZM">
+                                <rect key="frame" x="20" y="74" width="374" height="519"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pr3-zH-sW9">
+                                <rect key="frame" x="20" y="651" width="374" height="112"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dhd-Z2-hec">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                        <color key="trackTintColor" red="0.94117647059999998" green="0.42352941179999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LTA-JY-KyW">
+                                        <rect key="frame" x="0.0" y="22" width="374" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k71-Z2-BiG">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="n7C-YH-8a4"/>
+                                                    <constraint firstAttribute="height" constant="40" id="v8g-Aw-Jvc"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Старт">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonTap:" destination="bng-ji-aDs" eventType="touchUpInside" id="dZi-cf-WYG"/>
+                                                </connections>
+                                            </button>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4He-lQ-g4C">
+                                                <rect key="frame" x="280" y="0.0" width="94" height="40"/>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ury-hI-HV0">
+                                        <rect key="frame" x="-2" y="82" width="378" height="31"/>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="o2z-G9-T7C"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uwp-Rc-UEt" firstAttribute="bottom" secondItem="Pr3-zH-sW9" secondAttribute="bottom" constant="50" id="2Yh-b3-EGP"/>
+                            <constraint firstItem="MV6-wq-fZM" firstAttribute="top" secondItem="Uwp-Rc-UEt" secondAttribute="top" constant="30" id="7KQ-4T-t38"/>
+                            <constraint firstItem="MV6-wq-fZM" firstAttribute="leading" secondItem="Uwp-Rc-UEt" secondAttribute="leading" constant="20" id="GJa-GU-kJo"/>
+                            <constraint firstItem="Pr3-zH-sW9" firstAttribute="leading" secondItem="Uwp-Rc-UEt" secondAttribute="leading" constant="20" id="bJI-NE-gzu"/>
+                            <constraint firstItem="Uwp-Rc-UEt" firstAttribute="bottom" secondItem="MV6-wq-fZM" secondAttribute="bottom" constant="220" id="h1e-Ua-sMB"/>
+                            <constraint firstItem="Uwp-Rc-UEt" firstAttribute="trailing" secondItem="MV6-wq-fZM" secondAttribute="trailing" constant="20" id="h7i-yT-t11"/>
+                            <constraint firstItem="Uwp-Rc-UEt" firstAttribute="trailing" secondItem="Pr3-zH-sW9" secondAttribute="trailing" constant="20" id="hPV-ZV-oVS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uwp-Rc-UEt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Task #1" id="OF9-od-dEN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="galleryImageView" destination="MV6-wq-fZM" id="F5Y-f3-AVo"/>
+                        <outlet property="progressView" destination="Dhd-Z2-hec" id="ITv-E0-aAR"/>
+                        <outlet property="slider" destination="Ury-hI-HV0" id="TZD-OC-SM5"/>
+                        <outlet property="startButton" destination="k71-Z2-BiG" id="Ya5-hb-Upx"/>
+                        <outlet property="stepper" destination="4He-lQ-g4C" id="Rdn-Fq-Ql7"/>
+                        <outlet property="view" destination="MV6-wq-fZM" id="f6k-My-aA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7vm-OE-haY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>

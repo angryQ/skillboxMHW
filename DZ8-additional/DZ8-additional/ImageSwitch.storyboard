@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t95-0f-ntw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task #3-->
+        <scene sceneID="keN-43-DkF">
+            <objects>
+                <viewController id="t95-0f-ntw" customClass="ImageSwitchViewController" customModule="DZ8_additional" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0X8-zQ-OPX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jiV-YB-jFU">
+                                <rect key="frame" x="182.5" y="632" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeOpacity:" destination="t95-0f-ntw" eventType="valueChanged" id="QxC-M1-W40"/>
+                                </connections>
+                            </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="pic-10" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-D3-ZIS">
+                                <rect key="frame" x="20" y="64" width="374" height="528"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-8u-ELm">
+                                <rect key="frame" x="248" y="385" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uxb-D3-ZIS" firstAttribute="top" secondItem="CsU-Se-LoG" secondAttribute="top" constant="20" id="A7k-uK-llZ"/>
+                            <constraint firstItem="CsU-Se-LoG" firstAttribute="trailing" secondItem="Uxb-D3-ZIS" secondAttribute="trailing" constant="20" id="KyU-i2-oZf"/>
+                            <constraint firstItem="Ial-8u-ELm" firstAttribute="centerY" secondItem="0X8-zQ-OPX" secondAttribute="centerY" id="VwC-A2-baC"/>
+                            <constraint firstItem="jiV-YB-jFU" firstAttribute="top" secondItem="Uxb-D3-ZIS" secondAttribute="bottom" constant="40" id="aZG-qI-YeX"/>
+                            <constraint firstItem="Ial-8u-ELm" firstAttribute="centerX" secondItem="0X8-zQ-OPX" secondAttribute="centerX" id="bni-YR-Hly"/>
+                            <constraint firstItem="Uxb-D3-ZIS" firstAttribute="leading" secondItem="CsU-Se-LoG" secondAttribute="leading" constant="20" id="dcb-gJ-PJu"/>
+                            <constraint firstItem="jiV-YB-jFU" firstAttribute="centerX" secondItem="0X8-zQ-OPX" secondAttribute="centerX" id="oYf-jk-RdD"/>
+                            <constraint firstItem="CsU-Se-LoG" firstAttribute="bottom" secondItem="jiV-YB-jFU" secondAttribute="bottom" constant="150" id="r47-mH-oqJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CsU-Se-LoG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Task #3" id="sn5-wu-11N"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Ial-8u-ELm" id="AJU-Ck-aWu"/>
+                        <outlet property="image" destination="Uxb-D3-ZIS" id="Wlc-KD-XeA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOV-Z2-8Th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.81159420289856" y="123.88392857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pic-10" width="540" height="674"/>
+    </resources>
+</document>

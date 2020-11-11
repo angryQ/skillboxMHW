@@ -1,86 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h5e-hA-kks">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gallery View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="T0K-fz-hJp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GalleryViewController" customModule="DZ8_additional" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-GW-kfd">
-                                <rect key="frame" x="20" y="74" width="374" height="568"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MQB-99-5Dy">
-                                <rect key="frame" x="20" y="700" width="374" height="112"/>
-                                <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1su-uw-eae">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
-                                        <color key="trackTintColor" red="0.94117647059999998" green="0.42352941179999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </progressView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-Nu-UmR">
-                                        <rect key="frame" x="0.0" y="22" width="374" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-4j-oaf">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="LnQ-81-elW"/>
-                                                    <constraint firstAttribute="height" constant="40" id="WrW-Ap-TTO"/>
-                                                </constraints>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Старт">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGI-hB-FF5"/>
-                                                </connections>
-                                            </button>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qXH-ez-cPG">
-                                                <rect key="frame" x="280" y="0.0" width="94" height="40"/>
-                                            </stepper>
-                                        </subviews>
-                                    </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-R5-NuZ">
-                                        <rect key="frame" x="-2" y="82" width="378" height="31"/>
-                                    </slider>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="Ips-4K-6CT"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTf-GW-kfd" secondAttribute="trailing" constant="20" id="6Xx-sr-8vZ"/>
-                            <constraint firstItem="cTf-GW-kfd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6vP-2d-Nbb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cTf-GW-kfd" secondAttribute="bottom" constant="220" id="FAM-8j-HRQ"/>
-                            <constraint firstItem="cTf-GW-kfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U8u-y0-F4T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MQB-99-5Dy" secondAttribute="bottom" constant="50" id="Yqy-so-jTz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MQB-99-5Dy" secondAttribute="trailing" constant="20" id="e9v-kb-Cu7"/>
-                            <constraint firstItem="MQB-99-5Dy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g1y-AP-hVv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="h5e-hA-kks" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oKW-fa-G41">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.94117647059999998" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="galleryImageView" destination="cTf-GW-kfd" id="Wsp-BD-fpK"/>
-                        <outlet property="progressView" destination="1su-uw-eae" id="oHa-5h-ZZO"/>
-                        <outlet property="slider" destination="GeO-R5-NuZ" id="zxA-Ak-Q7S"/>
-                        <outlet property="startButton" destination="e6W-4j-oaf" id="Gfd-PW-Phq"/>
-                        <outlet property="stepper" destination="qXH-ez-cPG" id="pks-nb-pWm"/>
-                        <outlet property="view" destination="cTf-GW-kfd" id="MI7-63-gdU"/>
+                        <segue destination="wXG-rb-apc" kind="relationship" relationship="viewControllers" id="FXM-b4-5W8"/>
+                        <segue destination="sHQ-pX-6bG" kind="relationship" relationship="viewControllers" id="2xg-Tn-f7e"/>
+                        <segue destination="307-c3-x6q" kind="relationship" relationship="viewControllers" id="bua-W1-J9l"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJh-ju-2wK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+            <point key="canvasLocation" x="798.55072463768124" y="133.92857142857142"/>
+        </scene>
+        <!--Gallery-->
+        <scene sceneID="KrP-i0-bfI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Gallery" id="wXG-rb-apc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Task #1" id="kCg-mg-zma"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEz-1M-nbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353" y="-3"/>
+        </scene>
+        <!--Dates-->
+        <scene sceneID="eOe-KB-hmp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dates" id="sHQ-pX-6bG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Task #2" id="OCM-dq-sjW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Jg-sa-Vj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="127"/>
+        </scene>
+        <!--ImageSwitch-->
+        <scene sceneID="QF8-hN-8We">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ImageSwitch" id="307-c3-x6q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Task #3" id="lJr-TW-oJf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehg-7C-P7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="217"/>
         </scene>
     </scenes>
 </document>

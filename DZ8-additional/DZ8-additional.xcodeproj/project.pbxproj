@@ -14,6 +14,11 @@
 		6A91D1C0254B439B00500FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1BF254B439B00500FA3 /* Assets.xcassets */; };
 		6A91D1C3254B439B00500FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1C1254B439B00500FA3 /* LaunchScreen.storyboard */; };
 		6A91D1CD254B444700500FA3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D1CC254B444700500FA3 /* GalleryViewController.swift */; };
+		6A91D1CF2555B34D00500FA3 /* Dates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1CE2555B34D00500FA3 /* Dates.storyboard */; };
+		6A91D1D12555B36400500FA3 /* DatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D1D02555B36400500FA3 /* DatesViewController.swift */; };
+		6A91D1D32559231D00500FA3 /* ImageSwitch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1D22559231D00500FA3 /* ImageSwitch.storyboard */; };
+		6A91D1D5255923A800500FA3 /* ImageSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D1D4255923A800500FA3 /* ImageSwitchViewController.swift */; };
+		6A91D1D725592FA100500FA3 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91D1D625592FA000500FA3 /* Gallery.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		6A91D1C2254B439B00500FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A91D1C4254B439B00500FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A91D1CC254B444700500FA3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		6A91D1CE2555B34D00500FA3 /* Dates.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dates.storyboard; sourceTree = "<group>"; };
+		6A91D1D02555B36400500FA3 /* DatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewController.swift; sourceTree = "<group>"; };
+		6A91D1D22559231D00500FA3 /* ImageSwitch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSwitch.storyboard; sourceTree = "<group>"; };
+		6A91D1D4255923A800500FA3 /* ImageSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSwitchViewController.swift; sourceTree = "<group>"; };
+		6A91D1D625592FA000500FA3 /* Gallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +75,12 @@
 				6A91D1BF254B439B00500FA3 /* Assets.xcassets */,
 				6A91D1C1254B439B00500FA3 /* LaunchScreen.storyboard */,
 				6A91D1C4254B439B00500FA3 /* Info.plist */,
+				6A91D1D625592FA000500FA3 /* Gallery.storyboard */,
 				6A91D1CC254B444700500FA3 /* GalleryViewController.swift */,
+				6A91D1CE2555B34D00500FA3 /* Dates.storyboard */,
+				6A91D1D02555B36400500FA3 /* DatesViewController.swift */,
+				6A91D1D22559231D00500FA3 /* ImageSwitch.storyboard */,
+				6A91D1D4255923A800500FA3 /* ImageSwitchViewController.swift */,
 			);
 			path = "DZ8-additional";
 			sourceTree = "<group>";
@@ -129,8 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A91D1C3254B439B00500FA3 /* LaunchScreen.storyboard in Resources */,
+				6A91D1D725592FA100500FA3 /* Gallery.storyboard in Resources */,
 				6A91D1C0254B439B00500FA3 /* Assets.xcassets in Resources */,
 				6A91D1BE254B439800500FA3 /* Main.storyboard in Resources */,
+				6A91D1CF2555B34D00500FA3 /* Dates.storyboard in Resources */,
+				6A91D1D32559231D00500FA3 /* ImageSwitch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +161,9 @@
 			files = (
 				6A91D1BB254B439800500FA3 /* ViewController.swift in Sources */,
 				6A91D1CD254B444700500FA3 /* GalleryViewController.swift in Sources */,
+				6A91D1D5255923A800500FA3 /* ImageSwitchViewController.swift in Sources */,
 				6A91D1B7254B439800500FA3 /* AppDelegate.swift in Sources */,
+				6A91D1D12555B36400500FA3 /* DatesViewController.swift in Sources */,
 				6A91D1B9254B439800500FA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
