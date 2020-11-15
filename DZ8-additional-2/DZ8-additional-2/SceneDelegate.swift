@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createContainerViewController() -> UIViewController {
         let greenVC = initiateVC(storyboardName: "Green", storyboardID: "GreenViewController")
         let blueVC =  initiateVC(storyboardName: "Blue", storyboardID: "BlueViewController")
-        //let purpleVC =  initiateVC(storyboardName: "Purple", storyboardID: "PurpleViewController")
+        let purpleVC =  initiateVC(storyboardName: "Purple", storyboardID: "PurpleViewController")
         let defaultVC = initiateVC(storyboardName: "Purple", storyboardID: "PurpleViewController")
         
         let conVC = ContainerViewController()
@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         conVC.addVC(greenVC, buttonTitle: buttonTitle)
         conVC.addVC(blueVC, buttonTitle: buttonTitle)
-        //conVC.addVC(purpleVC, buttonTitle: buttonTitle)
+        conVC.addVC(purpleVC, buttonTitle: buttonTitle)
         conVC.setDefaultPlaceholder(defaultVC)
         
         return conVC
