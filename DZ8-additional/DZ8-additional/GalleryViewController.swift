@@ -27,7 +27,7 @@ class GalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        galleryImageView.image = images[0]
+        galleryImageView.image = images.first
         galleryImageView.contentMode = .scaleAspectFill
         startButton.setTitle("Стоп", for: .selected)
         slider.value = 0
@@ -50,47 +50,29 @@ class GalleryViewController: UIViewController {
     
     //Обрабатываем нажатие на кнопку Start/Stop
     @IBAction func startButtonTap(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected.toggle()
         
-        if timer == nil, sender.isSelected == true {
+        if timer == nil, sender.isSelected {
             timer = Timer.scheduledTimer(withTimeInterval: duration, repeats: true) { timer in
                 self.currentPicIndex += 1
                 if self.currentPicIndex > self.images.count - 1 {
                     self.currentPicIndex = 0
                 }
-                self.startAnimationFromImageWithIndex(self.currentPicIndex)
+                self.galleryImageView.image = self.images[self.currentPicIndex]
                 self.updateProgressView()
             }
         }
         else {
-            self.stopAnimationOnImageWithIndex(self.currentPicIndex)
             timer?.invalidate()
             timer = nil
         }
     }
+    
     //Обновляем состояние прогресс вью
     private func updateProgressView() {
-        self.progressView.progress =  0.1 * Float(currentPicIndex + 1)
+        self.progressView.progress =  (1/Float(images.count - 1)) * Float(currentPicIndex)
     }
     
-    //События выполняемые во время запущенной анимации
-    private func startAnimationFromImageWithIndex(_ index: Int) {
-        let subArray = Array(self.images[index..<self.images.count])
-        self.galleryImageView.animationImages = subArray
-        self.galleryImageView.animationDuration = Double(subArray.count) * duration
-        self.galleryImageView.startAnimating()
-    }
-    
-    //События выполняемые во время паузы анимации
-    private func stopAnimationOnImageWithIndex(_ index: Int) {
-        galleryImageView.stopAnimating()
-        if index == images.count || index <= 0 {
-            galleryImageView.image = self.images[0]
-        }
-        else {
-            self.galleryImageView.image = self.images[index]
-        }
-    }
     //Настройка слайдера с эффектом размытия картинок
     private func configureSlider() {
         slider.minimumValue = 0
