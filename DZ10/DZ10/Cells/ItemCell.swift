@@ -12,14 +12,21 @@ class ItemCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImage: UIImageView! {
         didSet {
-            itemImage.layer.cornerRadius = 10
             itemImage.layer.masksToBounds = true
         }
     }
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var oldPriceLabel: UILabel!
     @IBOutlet weak var newPriceLabel: UILabel!
-    @IBOutlet weak var discountLabel: UILabel!
+    @IBOutlet weak var discountLabel: UILabel! {
+        didSet {
+            discountLabel.layer.masksToBounds = true
+            discountLabel.layer.cornerRadius = 3
+            discountLabel.layer.borderColor = UIColor.red.cgColor
+            discountLabel.layer.borderWidth = 4
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -50,8 +50,8 @@ UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let item = store.images[indexPath.item]
-//        cell.layer.borderColor = UIColor.blue.cgColor
-//        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 1
         cell.setupCell(item: item)
         
         return cell
