@@ -77,7 +77,6 @@
                         <outlet property="slider" destination="Ury-hI-HV0" id="TZD-OC-SM5"/>
                         <outlet property="startButton" destination="k71-Z2-BiG" id="Ya5-hb-Upx"/>
                         <outlet property="stepper" destination="4He-lQ-g4C" id="Rdn-Fq-Ql7"/>
-                        <outlet property="view" destination="MV6-wq-fZM" id="f6k-My-aA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vm-OE-haY" sceneMemberID="firstResponder"/>

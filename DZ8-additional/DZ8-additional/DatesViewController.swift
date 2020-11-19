@@ -25,23 +25,22 @@ class DatesViewController: UIViewController {
     }
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-       changeLabel()
+        changeLabel()
     }
     
     func changeLabel() {
-        guard let _ = Int(checkTextInTextField(text: timeZoneTextField.text!)) else {
-            resultLabel.text = checkTextInTextField(text: timeZoneTextField.text!)
-            return }
-        resultLabel.text = formatDate(date: datePicker.date, timezone: TimeZone(abbreviation: "GMT" + timeZoneTextField.text!))
-    }
-    
-    private func checkTextInTextField(text: String) -> String {
-        guard let textInt = Int(text) else {return "\(formatDate(date: datePicker.date))"}
-        if textInt >= -12 && textInt <= 14 {
-            return text
+        //Если введен текст или строка пуста, то вывожу дату и временя по таймзоне устройства
+        guard let textInt = Int(timeZoneTextField.text!) else {
+            resultLabel.text = "\(formatDate(date: datePicker.date))"
+            return
         }
-        else {
-            return "Введите число от -12 до 14 (включительно)"
+        
+        //Устанавливала диапазон до 14, отталкиваясь от данных этого сайта: https://greenwichmeantime.com/time-zone/gmt-plus-14/
+        switch textInt {
+        case 0...12: resultLabel.text = formatDate(date: datePicker.date, timezone: TimeZone(abbreviation: "GMT" + "+\(textInt)"))
+        case -12...(-1): resultLabel.text = formatDate(date: datePicker.date, timezone: TimeZone(abbreviation: "GMT" + "\(textInt)"))
+        default:
+            return resultLabel.text = "Введите число от -12 до +12 (включительно)"
         }
     }
     
