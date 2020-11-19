@@ -19,12 +19,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
+    @IBAction func textChangedInTextField(_ sender: UITextField) {
         guard let unwrappedGreenLabel = greenLabel, let unwrappedOrangeLabel =  orangeLabel else { return }
-        unwrappedGreenLabel.text = greenTextField.text
-        unwrappedOrangeLabel.text = orangeTextField.text
+        if sender.tag == 1 {
+            unwrappedGreenLabel.text = sender.text
+        } else {
+            unwrappedOrangeLabel.text = sender.text
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
