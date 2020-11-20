@@ -9,25 +9,21 @@
 import UIKit
 
 class ContainerViewController: UIViewController {
+    
     lazy var buttonsStackView = UIStackView()
     var childVCStackView = UIStackView()
     var holderStackView = UIStackView()
     
     private var childs: [UIViewController] = []
     private var defaultVC: UIViewController?
-    private var countOfActiveViews = 0
+    var lastIndex = 0
+    var indicesOfShowedViews: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         view.addSubview(holderStackView)
-        countOfActiveViews = childs.count
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
         configureHolderStackView()
         configureViewsStackView()
     }
@@ -38,7 +34,8 @@ class ContainerViewController: UIViewController {
         assert(childs.count < 6, "Too many child ViewControllers: only 6 allowed")
         
         childs.append(vc)
-        addChildVC(childVC: vc, index: holderStackView.arrangedSubviews.count)
+        addChildVC(childVC: vc, index: lastIndex)
+        lastIndex += 1
         holderStackView.addArrangedSubview(childVCStackView)
         
         guard let buttonTitle = buttonTitle else { return }
@@ -78,43 +75,50 @@ class ContainerViewController: UIViewController {
         let index = buttonsStackView.arrangedSubviews.firstIndex(of: sender)!
         
         if sender.title(for: .normal) == "Включить" {
-            childs[index].view.isHidden = false
-            countOfActiveViews += 1
-            sender.setTitle("Выключить", for: .normal)
-            
-            guard let vc = defaultVC else {return}
-            if (vc.view.isDescendant(of: childVCStackView)) {
-                vc.willMove(toParent: nil)
-                vc.view.removeFromSuperview()
-                vc.removeFromParent()
+            if (defaultVC?.view.isDescendant(of: childVCStackView))! {
+                removeChildVC(childVC: defaultVC!)
             }
+            addChildVC(childVC: childs[index], index: index)
+            sender.setTitle("Выключить", for: .normal)
         }
         else {
-            countOfActiveViews -= 1
             removeChildVC(childVC: childs[index])
+            removeIndexFromViewIndicesArray(index: index)
             sender.setTitle("Включить", for: .normal)
         }
     }
     
-    private func addChildVC(childVC: UIViewController, index: Int = 0) {
+    private func addChildVC(childVC: UIViewController, index: Int) {
         // Функция для добавления контроллера в иерархию и его показа
         
         addChild(childVC)
-        childVCStackView.insertArrangedSubview(childVC.view, at: childVCStackView.arrangedSubviews.count)
+        childVCStackView.insertArrangedSubview(childVC.view, at: findViewIndexInChildStackView(for: index))
         childVC.didMove(toParent: self)
     }
     
     private func removeChildVC(childVC: UIViewController) {
         // Функция для удаления контроллера из иерархии и его скрытия
         
-        childVC.view.isHidden = true
+        childVC.willMove(toParent: nil)
+        childVC.view.removeFromSuperview()
+        childVC.removeFromParent()
         
-        //Если все VC внутри childStackview скрыты, то отображаем дефолтный вью котроллер
-        if countOfActiveViews == 0 {
-            guard let vc = defaultVC else {return}
-            addChild(vc)
-            childVCStackView.addArrangedSubview(vc.view)
-            vc.didMove(toParent: self)
+        if childVCStackView.arrangedSubviews.count == 0 {
+            guard let vc = defaultVC else { return }
+            addChildVC(childVC: vc, index: 0)
+            indicesOfShowedViews = []
+        }
+    }
+    
+    private func findViewIndexInChildStackView(for index: Int) -> Int {
+        indicesOfShowedViews.append(index)
+        indicesOfShowedViews = indicesOfShowedViews.sorted()
+        return indicesOfShowedViews.firstIndex(of: index)!
+    }
+    
+    private func removeIndexFromViewIndicesArray(index: Int) {
+        if let idx = indicesOfShowedViews.firstIndex(of: index) {
+            indicesOfShowedViews.remove(at: idx)
         }
     }
     
@@ -131,18 +135,12 @@ class ContainerViewController: UIViewController {
     
     func configureViewsStackView() {
         
-        if childVCStackView.subviews.count == 0 {
-            guard let vc = defaultVC else {return}
-            addChildVC(childVC: vc)
-        }
-        
         childVCStackView.axis = .vertical
         childVCStackView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         childVCStackView.distribution = .fillEqually
         childVCStackView.alignment = .fill
         childVCStackView.translatesAutoresizingMaskIntoConstraints = false
     }
-    
     func configureHolderStackView() {
         
         holderStackView.axis = .vertical
@@ -158,5 +156,4 @@ class ContainerViewController: UIViewController {
         
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
-    
 }
