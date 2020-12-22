@@ -126,19 +126,6 @@
                                     <segue destination="rYf-GS-JRi" kind="show" id="c2m-Bc-asy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5Y-mb-4bE">
-                                <rect key="frame" x="50" y="588" width="314" height="30"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.42352941179999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eUA-o2-Uuu"/>
-                                </constraints>
-                                <state key="normal" title="Scroll с таблицей">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="W53-mV-F9m" kind="show" id="iiM-XY-IJv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -146,10 +133,8 @@
                             <constraint firstItem="htT-YE-EVR" firstAttribute="top" secondItem="PI1-YH-MOL" secondAttribute="bottom" constant="15" id="2jt-BH-fJZ"/>
                             <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="2DB-sX-1c5" secondAttribute="trailing" constant="50" id="3OE-6y-FaQ"/>
                             <constraint firstItem="PI1-YH-MOL" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="4gS-9V-Hky"/>
-                            <constraint firstItem="V5Y-mb-4bE" firstAttribute="top" secondItem="gr3-7b-ukE" secondAttribute="bottom" constant="15" id="5PL-TL-WCT"/>
                             <constraint firstItem="htT-YE-EVR" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="73j-Dz-OOc"/>
                             <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="gr3-7b-ukE" secondAttribute="trailing" constant="50" id="836-Ug-QJw"/>
-                            <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="V5Y-mb-4bE" secondAttribute="trailing" constant="50" id="9rY-AE-4rk"/>
                             <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="fwF-Qw-gcl" secondAttribute="trailing" constant="50" id="BaA-4s-UJt"/>
                             <constraint firstItem="gr3-7b-ukE" firstAttribute="top" secondItem="htT-YE-EVR" secondAttribute="bottom" constant="15" id="C5T-l6-1ld"/>
                             <constraint firstItem="gF8-Tv-nCO" firstAttribute="top" secondItem="IGu-GV-f18" secondAttribute="bottom" constant="15" id="GeL-yr-0na"/>
@@ -163,7 +148,6 @@
                             <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="IGu-GV-f18" secondAttribute="trailing" constant="50" id="Zj4-IA-Vrb"/>
                             <constraint firstItem="aMZ-eB-fnQ" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="aH9-16-5Tm"/>
                             <constraint firstItem="url-IE-piK" firstAttribute="trailing" secondItem="gF8-Tv-nCO" secondAttribute="trailing" constant="50" id="cMI-Nt-X5f"/>
-                            <constraint firstItem="V5Y-mb-4bE" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="dUD-VS-SBV"/>
                             <constraint firstItem="s57-GQ-k0Y" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="doY-d2-Tc7"/>
                             <constraint firstItem="gF8-Tv-nCO" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="eN4-Sz-ng2"/>
                             <constraint firstItem="IGu-GV-f18" firstAttribute="leading" secondItem="url-IE-piK" secondAttribute="leading" constant="50" id="gIG-vb-eXw"/>
@@ -274,16 +258,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wj-sA-yFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2685" y="297"/>
-        </scene>
-        <!--ScrollUsingTable-->
-        <scene sceneID="xpg-cQ-yxY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ScrollUsingTable" id="W53-mV-F9m" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="idV-NI-JvI"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Gd-Il-CrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2684" y="333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AbO-jQ-Pz9">

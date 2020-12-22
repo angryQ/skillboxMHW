@@ -21,19 +21,6 @@
 		6A5D1F442577BBFB0085604C /* GridCustomCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F432577BBFB0085604C /* GridCustomCode.storyboard */; };
 		6A5D1F4825864B3E0085604C /* LayoutTaskVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F4725864B3E0085604C /* LayoutTaskVideoViewController.swift */; };
 		6A5D1F4A25864B4E0085604C /* LayoutTaskVideo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F4925864B4E0085604C /* LayoutTaskVideo.storyboard */; };
-		6A5D1F522588BF640085604C /* MainInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F502588BF640085604C /* MainInfoTableViewCell.swift */; };
-		6A5D1F532588BF640085604C /* MainInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F512588BF640085604C /* MainInfoTableViewCell.xib */; };
-		6A5D1F552588C26D0085604C /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F542588C26D0085604C /* SimpleTableViewCell.swift */; };
-		6A5D1F572588C2B30085604C /* ScrollWithTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F562588C2B30085604C /* ScrollWithTableViewController.swift */; };
-		6A5D1F5A2589C2D90085604C /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F582589C2D90085604C /* BannerTableViewCell.swift */; };
-		6A5D1F5B2589C2D90085604C /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F592589C2D90085604C /* BannerTableViewCell.xib */; };
-		6A5D1F5E2589E0BC0085604C /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F5C2589E0BC0085604C /* MapTableViewCell.swift */; };
-		6A5D1F5F2589E0BC0085604C /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F5D2589E0BC0085604C /* MapTableViewCell.xib */; };
-		6A5D1F622589F7130085604C /* NarrowButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F602589F7130085604C /* NarrowButtonTableViewCell.swift */; };
-		6A5D1F632589F7130085604C /* NarrowButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F612589F7130085604C /* NarrowButtonTableViewCell.xib */; };
-		6A5D1F6A258A0A7D0085604C /* ActionButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D1F68258A0A7D0085604C /* ActionButtonsTableViewCell.swift */; };
-		6A5D1F6B258A0A7D0085604C /* ActionButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F69258A0A7D0085604C /* ActionButtonsTableViewCell.xib */; };
-		6A5D1F6D258C949A0085604C /* ScrollUsingTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1F6C258C949A0085604C /* ScrollUsingTable.storyboard */; };
 		6A91D2172563DD8100500FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D2162563DD8100500FA3 /* AppDelegate.swift */; };
 		6A91D2192563DD8100500FA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D2182563DD8100500FA3 /* SceneDelegate.swift */; };
 		6A91D21B2563DD8100500FA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91D21A2563DD8100500FA3 /* ViewController.swift */; };
@@ -64,19 +51,6 @@
 		6A5D1F432577BBFB0085604C /* GridCustomCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GridCustomCode.storyboard; sourceTree = "<group>"; };
 		6A5D1F4725864B3E0085604C /* LayoutTaskVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTaskVideoViewController.swift; sourceTree = "<group>"; };
 		6A5D1F4925864B4E0085604C /* LayoutTaskVideo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LayoutTaskVideo.storyboard; sourceTree = "<group>"; };
-		6A5D1F502588BF640085604C /* MainInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F512588BF640085604C /* MainInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainInfoTableViewCell.xib; sourceTree = "<group>"; };
-		6A5D1F542588C26D0085604C /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F562588C2B30085604C /* ScrollWithTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollWithTableViewController.swift; sourceTree = "<group>"; };
-		6A5D1F582589C2D90085604C /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F592589C2D90085604C /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
-		6A5D1F5C2589E0BC0085604C /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F5D2589E0BC0085604C /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
-		6A5D1F602589F7130085604C /* NarrowButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrowButtonTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F612589F7130085604C /* NarrowButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrowButtonTableViewCell.xib; sourceTree = "<group>"; };
-		6A5D1F68258A0A7D0085604C /* ActionButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsTableViewCell.swift; sourceTree = "<group>"; };
-		6A5D1F69258A0A7D0085604C /* ActionButtonsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionButtonsTableViewCell.xib; sourceTree = "<group>"; };
-		6A5D1F6C258C949A0085604C /* ScrollUsingTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScrollUsingTable.storyboard; sourceTree = "<group>"; };
 		6A91D2132563DD8100500FA3 /* DZ10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZ10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A91D2162563DD8100500FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A91D2182563DD8100500FA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,26 +79,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A5D1F4B25886E2A0085604C /* ScrollLayout */ = {
-			isa = PBXGroup;
-			children = (
-				6A5D1F562588C2B30085604C /* ScrollWithTableViewController.swift */,
-				6A5D1F6C258C949A0085604C /* ScrollUsingTable.storyboard */,
-				6A5D1F502588BF640085604C /* MainInfoTableViewCell.swift */,
-				6A5D1F512588BF640085604C /* MainInfoTableViewCell.xib */,
-				6A5D1F542588C26D0085604C /* SimpleTableViewCell.swift */,
-				6A5D1F582589C2D90085604C /* BannerTableViewCell.swift */,
-				6A5D1F592589C2D90085604C /* BannerTableViewCell.xib */,
-				6A5D1F5C2589E0BC0085604C /* MapTableViewCell.swift */,
-				6A5D1F5D2589E0BC0085604C /* MapTableViewCell.xib */,
-				6A5D1F602589F7130085604C /* NarrowButtonTableViewCell.swift */,
-				6A5D1F612589F7130085604C /* NarrowButtonTableViewCell.xib */,
-				6A5D1F68258A0A7D0085604C /* ActionButtonsTableViewCell.swift */,
-				6A5D1F69258A0A7D0085604C /* ActionButtonsTableViewCell.xib */,
-			);
-			path = ScrollLayout;
-			sourceTree = "<group>";
-		};
 		6A5D1F6E25920B900085604C /* Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +128,6 @@
 		6A91D2152563DD8100500FA3 /* DZ10 */ = {
 			isa = PBXGroup;
 			children = (
-				6A5D1F4B25886E2A0085604C /* ScrollLayout */,
 				6A5D1F6F25920D270085604C /* Collection */,
 				6A5D1F6E25920B900085604C /* Table */,
 				6A5D1F7025920E2B0085604C /* Scroll */,
@@ -268,25 +221,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A5D1F322572A2FE0085604C /* Grid3x3Stack.storyboard in Resources */,
-				6A5D1F5B2589C2D90085604C /* BannerTableViewCell.xib in Resources */,
 				6A5D1F3A2573DD5A0085604C /* Table.storyboard in Resources */,
 				6A91D22F2563DEFA00500FA3 /* Collection.storyboard in Resources */,
-				6A5D1F5F2589E0BC0085604C /* MapTableViewCell.xib in Resources */,
 				6A91D2232563DD8400500FA3 /* LaunchScreen.storyboard in Resources */,
 				6A5D1F4A25864B4E0085604C /* LayoutTaskVideo.storyboard in Resources */,
-				6A5D1F6D258C949A0085604C /* ScrollUsingTable.storyboard in Resources */,
 				6A5D1F402577B92D0085604C /* GridCustomStack.storyboard in Resources */,
 				6A5D1F342572A5FD0085604C /* Grid2x2Stack.storyboard in Resources */,
 				6ADF43D92567A6E400B7AC4D /* ItemCell.xib in Resources */,
-				6A5D1F632589F7130085604C /* NarrowButtonTableViewCell.xib in Resources */,
 				6ADF43D32564EAE800B7AC4D /* Scroll.storyboard in Resources */,
 				6A5D1F382572A8050085604C /* Grid3x3Code.storyboard in Resources */,
-				6A5D1F532588BF640085604C /* MainInfoTableViewCell.xib in Resources */,
 				6A91D2202563DD8400500FA3 /* Assets.xcassets in Resources */,
 				6A5D1F442577BBFB0085604C /* GridCustomCode.storyboard in Resources */,
 				6A5D1F30256D101C0085604C /* Grid2x2Code.storyboard in Resources */,
 				6A91D21E2563DD8100500FA3 /* Main.storyboard in Resources */,
-				6A5D1F6B258A0A7D0085604C /* ActionButtonsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,20 +245,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A5D1F3E2573F1E60085604C /* SettingTableViewCell.swift in Sources */,
-				6A5D1F552588C26D0085604C /* SimpleTableViewCell.swift in Sources */,
-				6A5D1F622589F7130085604C /* NarrowButtonTableViewCell.swift in Sources */,
 				6A91D22D2563DE8900500FA3 /* imageCollection.swift in Sources */,
-				6A5D1F5A2589C2D90085604C /* BannerTableViewCell.swift in Sources */,
 				6A91D22B2563DDFA00500FA3 /* CollectionViewController.swift in Sources */,
-				6A5D1F5E2589E0BC0085604C /* MapTableViewCell.swift in Sources */,
 				6ADF43D82567A6E400B7AC4D /* ItemCell.swift in Sources */,
 				6A5D1F422577BBC00085604C /* GridCustomCodeViewController.swift in Sources */,
-				6A5D1F522588BF640085604C /* MainInfoTableViewCell.swift in Sources */,
 				6A5D1F3C2573E6E60085604C /* MyTableViewController.swift in Sources */,
 				6A5D1F362572A7EC0085604C /* Grid3x3CodeViewController.swift in Sources */,
-				6A5D1F572588C2B30085604C /* ScrollWithTableViewController.swift in Sources */,
 				6A5D1F4825864B3E0085604C /* LayoutTaskVideoViewController.swift in Sources */,
-				6A5D1F6A258A0A7D0085604C /* ActionButtonsTableViewCell.swift in Sources */,
 				6ADF43D12564EAD100B7AC4D /* ScrollViewController.swift in Sources */,
 				6A91D21B2563DD8100500FA3 /* ViewController.swift in Sources */,
 				6A91D2172563DD8100500FA3 /* AppDelegate.swift in Sources */,
