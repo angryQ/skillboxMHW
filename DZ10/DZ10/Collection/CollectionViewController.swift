@@ -10,7 +10,6 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     
-    //@IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var store: ImageCollection = ImageCollection()
@@ -20,20 +19,12 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.modalPresentationStyle = .fullScreen
         self.collectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//        
-//        DispatchQueue.main.async {
-//          self.collectionView?.reloadData()
-//        }
-//    }
 }
-
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
@@ -50,8 +41,6 @@ UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let item = store.images[indexPath.item]
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.borderWidth = 1
         cell.setupCell(item: item)
         
         return cell

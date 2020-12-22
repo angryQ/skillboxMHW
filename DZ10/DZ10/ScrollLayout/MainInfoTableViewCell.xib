@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainInfoTableViewCell" rowHeight="155" id="KGk-i7-Jjw" customClass="MainInfoTableViewCell" customModule="DZ10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="155"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="464" height="155"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бургерная Джо" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWI-ke-aOa">
+                        <rect key="frame" x="20" y="0.0" width="424" height="64.5"/>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="blB-LV-yOG">
+                        <rect key="frame" x="20" y="115" width="424" height="30"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discount" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-n5-x9Z">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9jb-lg-8PX"/>
+                                    <constraint firstAttribute="height" constant="30" id="dk0-F5-kv7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSo-Ap-vnw">
+                                <rect key="frame" x="35" y="0.0" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NeN-fW-FFc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BS0-98-Frv">
+                                <rect key="frame" x="190" y="0.0" width="175.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RrF-9B-3Eu">
+                                <rect key="frame" x="370.5" y="0.0" width="22" height="30"/>
+                                <color key="tintColor" red="0.94117647059999998" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IW-Zu-SiF">
+                                <rect key="frame" x="397.5" y="0.0" width="26.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="iBM-Jr-WBE"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Американская кухня" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JU-mB-j7d">
+                        <rect key="frame" x="40" y="74.5" width="384" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="CEm-yO-Gqx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aWI-ke-aOa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4p5-tB-hot"/>
+                    <constraint firstItem="4JU-mB-j7d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="5D3-nJ-PBP"/>
+                    <constraint firstItem="aWI-ke-aOa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="DNM-8P-54T"/>
+                    <constraint firstAttribute="trailing" secondItem="aWI-ke-aOa" secondAttribute="trailing" constant="20" id="ZkZ-6n-9rI"/>
+                    <constraint firstItem="4JU-mB-j7d" firstAttribute="top" secondItem="aWI-ke-aOa" secondAttribute="bottom" constant="10" id="bo2-4l-Vtf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4JU-mB-j7d" secondAttribute="trailing" constant="20" id="eC7-q8-PFf"/>
+                    <constraint firstItem="blB-LV-yOG" firstAttribute="top" secondItem="4JU-mB-j7d" secondAttribute="bottom" constant="20" id="gOz-6p-SeW"/>
+                    <constraint firstAttribute="bottom" secondItem="blB-LV-yOG" secondAttribute="bottom" constant="10" id="pTy-Uv-xwA"/>
+                    <constraint firstItem="blB-LV-yOG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="sUb-M1-IQW"/>
+                    <constraint firstAttribute="trailing" secondItem="blB-LV-yOG" secondAttribute="trailing" constant="20" id="spP-2j-o29"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="discount" destination="nSo-Ap-vnw" id="Wrl-h1-bm3"/>
+                <outlet property="placeName" destination="aWI-ke-aOa" id="3ss-iG-fKb"/>
+                <outlet property="placeType" destination="4JU-mB-j7d" id="vd5-KP-pZ0"/>
+                <outlet property="rate" destination="8IW-Zu-SiF" id="8T2-fX-gUq"/>
+            </connections>
+            <point key="canvasLocation" x="242.0289855072464" y="193.19196428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="discount" width="138" height="110"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>

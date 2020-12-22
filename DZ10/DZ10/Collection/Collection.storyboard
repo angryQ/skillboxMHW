@@ -29,7 +29,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="n4c-UL-AYB" customClass="ItemCell" customModule="DZ10" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="201" height="236"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCell" insetsLayoutMarginsFromSafeArea="NO" id="hql-q8-Nlc">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Item2Cell" insetsLayoutMarginsFromSafeArea="NO" id="hql-q8-Nlc">
                                             <rect key="frame" x="0.0" y="0.0" width="201" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
