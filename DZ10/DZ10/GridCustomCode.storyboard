@@ -7,20 +7,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Grid Custom Code View Controller-->
+        <!--View Controller-->
         <scene sceneID="ZFE-1M-2p0">
             <objects>
-                <viewController id="n7j-qU-xib" customClass="GridCustomCodeViewController" customModule="DZ10" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n7j-qU-xib" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ4-wn-N7r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAq-FB-Szd">
+                                <rect key="frame" x="10" y="74" width="394" height="179"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsd-yk-d5y">
+                                <rect key="frame" x="10" y="442.5" width="394" height="179"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C44-fX-ra9">
+                                <rect key="frame" x="10" y="258" width="195" height="179.5"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-0N-G0A">
+                                <rect key="frame" x="209" y="258" width="195" height="179.5"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRN-yz-kq0">
+                                <rect key="frame" x="10" y="626.5" width="195" height="180"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-un-oyA">
+                                <rect key="frame" x="209" y="626.5" width="195" height="180"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C44-fX-ra9" firstAttribute="width" secondItem="cZ4-wn-N7r" secondAttribute="width" multiplier="0.5" constant="-12" id="1Vm-jk-BWF"/>
+                            <constraint firstItem="BUt-0N-G0A" firstAttribute="top" secondItem="OAq-FB-Szd" secondAttribute="bottom" constant="5" id="2Wy-Pd-txl"/>
+                            <constraint firstItem="Seq-B8-gJY" firstAttribute="trailing" secondItem="OAq-FB-Szd" secondAttribute="trailing" constant="10" id="4by-7i-7oP"/>
+                            <constraint firstItem="Seq-B8-gJY" firstAttribute="trailing" secondItem="fkW-un-oyA" secondAttribute="trailing" constant="10" id="5W9-0I-de1"/>
+                            <constraint firstItem="RRN-yz-kq0" firstAttribute="top" secondItem="Vsd-yk-d5y" secondAttribute="bottom" constant="5" id="5iA-bO-o6K"/>
+                            <constraint firstItem="fkW-un-oyA" firstAttribute="top" secondItem="Vsd-yk-d5y" secondAttribute="bottom" constant="5" id="9wD-yv-kzk"/>
+                            <constraint firstItem="C44-fX-ra9" firstAttribute="top" secondItem="OAq-FB-Szd" secondAttribute="bottom" constant="5" id="A2N-Td-cke"/>
+                            <constraint firstItem="OAq-FB-Szd" firstAttribute="leading" secondItem="Seq-B8-gJY" secondAttribute="leading" constant="10" id="AGe-aa-81f"/>
+                            <constraint firstItem="C44-fX-ra9" firstAttribute="height" secondItem="OAq-FB-Szd" secondAttribute="height" id="Av7-Dj-ZRc"/>
+                            <constraint firstItem="OAq-FB-Szd" firstAttribute="top" secondItem="Seq-B8-gJY" secondAttribute="top" constant="30" id="KZo-vK-6zl"/>
+                            <constraint firstItem="RRN-yz-kq0" firstAttribute="width" secondItem="C44-fX-ra9" secondAttribute="width" id="Lnf-O1-1a0"/>
+                            <constraint firstItem="fkW-un-oyA" firstAttribute="height" secondItem="Vsd-yk-d5y" secondAttribute="height" multiplier="1.00279" id="NZd-na-Taq"/>
+                            <constraint firstItem="Seq-B8-gJY" firstAttribute="trailing" secondItem="BUt-0N-G0A" secondAttribute="trailing" constant="10" id="OYe-VY-TR7"/>
+                            <constraint firstItem="Seq-B8-gJY" firstAttribute="trailing" secondItem="Vsd-yk-d5y" secondAttribute="trailing" constant="10" id="Vwg-hX-OMQ"/>
+                            <constraint firstItem="BUt-0N-G0A" firstAttribute="height" secondItem="OAq-FB-Szd" secondAttribute="height" id="YXb-gR-ITw"/>
+                            <constraint firstItem="OAq-FB-Szd" firstAttribute="height" secondItem="cZ4-wn-N7r" secondAttribute="height" multiplier="0.2" id="Zwy-iF-mPO"/>
+                            <constraint firstItem="fkW-un-oyA" firstAttribute="width" secondItem="BUt-0N-G0A" secondAttribute="width" id="a8J-aD-Arx"/>
+                            <constraint firstItem="RRN-yz-kq0" firstAttribute="height" secondItem="Vsd-yk-d5y" secondAttribute="height" multiplier="1.00279" id="btV-ld-XFX"/>
+                            <constraint firstItem="RRN-yz-kq0" firstAttribute="leading" secondItem="Seq-B8-gJY" secondAttribute="leading" constant="10" id="d1u-pn-Hl2"/>
+                            <constraint firstItem="Vsd-yk-d5y" firstAttribute="top" secondItem="C44-fX-ra9" secondAttribute="bottom" constant="5" id="l4b-Pc-PoV"/>
+                            <constraint firstItem="C44-fX-ra9" firstAttribute="leading" secondItem="Seq-B8-gJY" secondAttribute="leading" constant="10" id="odn-mA-HVG"/>
+                            <constraint firstItem="Vsd-yk-d5y" firstAttribute="leading" secondItem="Seq-B8-gJY" secondAttribute="leading" constant="10" id="r2Y-JA-UqQ"/>
+                            <constraint firstItem="Vsd-yk-d5y" firstAttribute="height" secondItem="BUt-0N-G0A" secondAttribute="height" id="t86-ud-faD"/>
+                            <constraint firstItem="BUt-0N-G0A" firstAttribute="width" secondItem="C44-fX-ra9" secondAttribute="width" id="zoP-vf-Vqh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Seq-B8-gJY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r28-9t-NLN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="106"/>
+            <point key="canvasLocation" x="266.66666666666669" y="105.80357142857143"/>
         </scene>
     </scenes>
 </document>
