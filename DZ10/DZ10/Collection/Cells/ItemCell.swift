@@ -28,10 +28,6 @@ class ItemCell: UICollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func setupCell(item: Item) {
         
         let attributedString = NSMutableAttributedString.init(string: self.oldPriceLabel.text!)
@@ -40,8 +36,8 @@ class ItemCell: UICollectionViewCell {
         self.itemImage.image = item.image
         self.itemNameLabel.text = item.name
         self.oldPriceLabel.text = "\(item.oldPrice) руб."
-        self.newPriceLabel.text = "\(item.newPrice) руб."
-        self.discountLabel.text = "\(item.discount)"
+        self.newPriceLabel.text = "\(item.oldPrice - (item.oldPrice * (item.discount / 100))) руб."
+        self.discountLabel.text = "\(item.discount) %"
     }
 
 }

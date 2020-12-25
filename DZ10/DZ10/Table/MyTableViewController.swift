@@ -12,7 +12,10 @@ struct Setting {
     let title: String
     var comment: String
     let accessoryType: UITableViewCell.AccessoryType
-    var switchIsHidden: Bool
+    var switchIsHidden: Bool? = true
+    var commentLabelTextColor: UIColor? = UIColor.gray
+    var commentLabelBackgroundColor: UIColor?
+    var commentLabelCordenRadius: CGFloat? = 0
     var icon: UIImage?
 }
 
@@ -23,22 +26,22 @@ class MyTableViewController: UIViewController {
     let settings = [
         [
             Setting(title: "Авиарежим", comment: "", accessoryType: .none, switchIsHidden: false),
-            Setting(title: "Wi-Fi", comment: "Anvics-YOTA", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Blutooth", comment: "Вкл. ", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Сотовая связь", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Режим модема", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true)
+            Setting(title: "Wi-Fi", comment: "Anvics-YOTA", accessoryType: .disclosureIndicator),
+            Setting(title: "Blutooth", comment: "Вкл. ", accessoryType: .disclosureIndicator),
+            Setting(title: "Сотовая связь", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Режим модема", comment: "", accessoryType: .disclosureIndicator),
         ],
         [
-            Setting(title: "Уведомления", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Звуки", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Тактильные сигналы", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Не беспокоить", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Экранное время", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true)
+            Setting(title: "Уведомления", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Звуки", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Тактильные сигналы", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Не беспокоить", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Экранное время", comment: "", accessoryType: .disclosureIndicator)
         ],
         [
-            Setting(title: "Основные", comment: "1", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Пункт управления", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true),
-            Setting(title: "Яркость", comment: "", accessoryType: .disclosureIndicator, switchIsHidden: true)
+            Setting(title: "Основные", comment: "1", accessoryType: .disclosureIndicator, switchIsHidden: true, commentLabelTextColor: UIColor.white, commentLabelBackgroundColor: UIColor.red, commentLabelCordenRadius: 10),
+            Setting(title: "Пункт управления", comment: "", accessoryType: .disclosureIndicator),
+            Setting(title: "Яркость", comment: "", accessoryType: .disclosureIndicator)
         ]
     ]
     
@@ -46,13 +49,13 @@ class MyTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle  = .fullScreen
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
-extension MyTableViewController: UITableViewDataSource {
+extension MyTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings[section].count
@@ -66,18 +69,13 @@ extension MyTableViewController: UITableViewDataSource {
         cell.settingImage.backgroundColor = .random
         cell.settingImage.tintColor = .white
         cell.titleLabel.text = setting.title
-        cell.mySwitch.isHidden = setting.switchIsHidden
+        cell.mySwitch.isHidden = setting.switchIsHidden!
         cell.commentLabel.text = setting.comment
         cell.accessoryType = setting.accessoryType
+        cell.commentLabel.backgroundColor = setting.commentLabelBackgroundColor
+        cell.commentLabel.cornerRadius = setting.commentLabelCordenRadius!
+        cell.commentLabel.textColor = setting.commentLabelTextColor
         
-        if indexPath.section == 2 && indexPath.row == 0 {
-            cell.commentLabel.backgroundColor = .red
-            cell.commentLabel.layer.cornerRadius = 10
-            cell.commentLabel.layer.masksToBounds = true
-            cell.commentLabel.textColor = .white
-            cell.mySwitch.isHidden = true
-            cell.accessoryType = .disclosureIndicator
-        }
         return cell
     }
     
@@ -86,13 +84,9 @@ extension MyTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "" // изменение высоты хэдера почему-то не работает, поэтому скрываю первый хэдер
-        } else {
-            return " "
-        }
+        return " "
     }
-    //Почему-то не работает
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 5
