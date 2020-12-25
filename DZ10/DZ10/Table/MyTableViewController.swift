@@ -13,9 +13,7 @@ struct Setting {
     var comment: String
     let accessoryType: UITableViewCell.AccessoryType
     var switchIsHidden: Bool? = true
-    var commentLabelTextColor: UIColor? = UIColor.gray
-    var commentLabelBackgroundColor: UIColor?
-    var commentLabelCordenRadius: CGFloat? = 0
+    var commentLabelStyle: CommentLabelType? = .standard
     var icon: UIImage?
 }
 
@@ -39,7 +37,7 @@ class MyTableViewController: UIViewController {
             Setting(title: "Экранное время", comment: "", accessoryType: .disclosureIndicator)
         ],
         [
-            Setting(title: "Основные", comment: "1", accessoryType: .disclosureIndicator, switchIsHidden: true, commentLabelTextColor: UIColor.white, commentLabelBackgroundColor: UIColor.red, commentLabelCordenRadius: 10),
+            Setting(title: "Основные", comment: "1", accessoryType: .disclosureIndicator, commentLabelStyle: .red),
             Setting(title: "Пункт управления", comment: "", accessoryType: .disclosureIndicator),
             Setting(title: "Яркость", comment: "", accessoryType: .disclosureIndicator)
         ]
@@ -67,14 +65,20 @@ extension MyTableViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.settingImage.image = imageWithImage(image: images.shuffled().randomElement()!, scaledToSize: CGSize(width: 20, height: 20))
         cell.settingImage.backgroundColor = .random
+        cell.accessoryType = setting.accessoryType
         cell.settingImage.tintColor = .white
         cell.titleLabel.text = setting.title
         cell.mySwitch.isHidden = setting.switchIsHidden!
+        
         cell.commentLabel.text = setting.comment
-        cell.accessoryType = setting.accessoryType
-        cell.commentLabel.backgroundColor = setting.commentLabelBackgroundColor
-        cell.commentLabel.cornerRadius = setting.commentLabelCordenRadius!
-        cell.commentLabel.textColor = setting.commentLabelTextColor
+        cell.commentLabel.textColor = setting.commentLabelStyle?.rawValue.textColor
+        cell.commentLabel.backgroundColor = setting.commentLabelStyle?.rawValue.backgroundColor
+        if let corderRadius = setting.commentLabelStyle?.rawValue.cornerRadius {
+            cell.commentLabel.cornerRadius = corderRadius
+        }
+        if let maskToBounds = setting.commentLabelStyle?.rawValue.maskToBounds {
+            cell.commentLabel.layer.masksToBounds = maskToBounds
+        }
         
         return cell
     }
@@ -105,6 +109,7 @@ extension MyTableViewController: UITableViewDataSource, UITableViewDelegate {
         UIGraphicsEndImageContext()
         return newImage!.withRenderingMode(.alwaysTemplate)
     }
+
 }
 extension UIColor {
     static var random: UIColor {
@@ -112,5 +117,17 @@ extension UIColor {
                        green: .random(in: 0...1),
                        blue: .random(in: 0...1),
                        alpha: 1.0)
+    }
+}
+
+enum CommentLabelType {
+    case standard
+    case red
+    
+    var rawValue: (textColor: UIColor, backgroundColor: UIColor, cornerRadius: CGFloat, maskToBounds: Bool) {
+        switch self {
+            case .standard: return (textColor: UIColor.gray, backgroundColor: UIColor.clear, cornerRadius: 0, maskToBounds: false)
+            case .red: return (textColor: UIColor.white, backgroundColor: UIColor.red, cornerRadius: 10, maskToBounds: true)
+        }
     }
 }
