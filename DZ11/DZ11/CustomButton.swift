@@ -8,7 +8,9 @@
 
 import UIKit
 
-@IBDesignable class CustomButton: UIButton {
+@IBDesignable class CustomButton: UIView {
+    
+    let recognizer = UITapGestureRecognizer()
     
     @IBInspectable var cornerRadius: CGFloat = 10 {
         didSet{
@@ -31,8 +33,18 @@ import UIKit
             }
         }
     }
+    @objc func buttonTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+          print("Hello!")
+       }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+    override func draw(_ rect: CGRect) {
+        let buttonLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+        buttonLabel.text = "Button title"
+        buttonLabel.textAlignment = .center
+        buttonLabel.textColor = .darkGray
+        addSubview(buttonLabel)
+        
+        recognizer.addTarget(self, action: #selector(buttonTapped(_:)))
+        self.addGestureRecognizer(recognizer)
+       }
 }

@@ -10,10 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let customSegmentedControl = CustomSegmentedControl()
+    var selectedSegment = "1"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //customSegmentedControl.delegate = self
     }
-
-
+    override func viewWillLayoutSubviews() {
+        customSegmentedControl.delegate = self
+        print(customSegmentedControl.selectedSegmentText)
+    }
+}
+extension ViewController: CustomSegmentedControlDelegate {
+    func getSelectedSegment(selectedSegment: String) {
+        print("hello: \(selectedSegment)")
+        //self.selectedSegment = selectedSegment
+        //print(selectedSegment)
+    }
+    
+    
 }
