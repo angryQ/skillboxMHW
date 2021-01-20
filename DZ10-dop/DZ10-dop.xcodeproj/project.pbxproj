@@ -16,6 +16,7 @@
 		6A9F8A9725B6D08800FD0063 /* MyCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F8A9625B6D08800FD0063 /* MyCollection.swift */; };
 		6A9F8A9925B6D27200FD0063 /* HorizontalScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F8A9825B6D27200FD0063 /* HorizontalScroll.swift */; };
 		6A9F8A9B25B6E76D00FD0063 /* HorizontalAndVerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F8A9A25B6E76D00FD0063 /* HorizontalAndVerticalScrollViewController.swift */; };
+		6A9F8AA625B7001400FD0063 /* GalleryWithScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F8AA425B7001400FD0063 /* GalleryWithScrollViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6A9F8A9625B6D08800FD0063 /* MyCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollection.swift; sourceTree = "<group>"; };
 		6A9F8A9825B6D27200FD0063 /* HorizontalScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScroll.swift; sourceTree = "<group>"; };
 		6A9F8A9A25B6E76D00FD0063 /* HorizontalAndVerticalScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalAndVerticalScrollViewController.swift; sourceTree = "<group>"; };
+		6A9F8AA425B7001400FD0063 /* GalleryWithScrollViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryWithScrollViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				6A9F8A9625B6D08800FD0063 /* MyCollection.swift */,
 				6A9F8A9825B6D27200FD0063 /* HorizontalScroll.swift */,
 				6A9F8A9A25B6E76D00FD0063 /* HorizontalAndVerticalScrollViewController.swift */,
+				6A9F8AA425B7001400FD0063 /* GalleryWithScrollViewViewController.swift */,
 			);
 			path = "DZ10-dop";
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				6A9F8A8725B6CE6C00FD0063 /* ViewController.swift in Sources */,
 				6A9F8A9B25B6E76D00FD0063 /* HorizontalAndVerticalScrollViewController.swift in Sources */,
 				6A9F8A8325B6CE6C00FD0063 /* AppDelegate.swift in Sources */,
+				6A9F8AA625B7001400FD0063 /* GalleryWithScrollViewViewController.swift in Sources */,
 				6A9F8A8525B6CE6C00FD0063 /* SceneDelegate.swift in Sources */,
 				6A9F8A9925B6D27200FD0063 /* HorizontalScroll.swift in Sources */,
 				6A9F8A9725B6D08800FD0063 /* MyCollection.swift in Sources */,
