@@ -19,12 +19,12 @@ class HorizontalScroll: UIView {
         
         scrollView.isPagingEnabled = true
         self.addSubview(scrollView)
-        let imageCollection = ImageCollection.nature
+        let imageCollection = ImageCollection.nature.images
         
         //Добавляем картинки на scrollView
-        for image in imageCollection.images {
+        for image in imageCollection {
             let imageView = UIImageView(image: image)
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.layer.cornerRadius = 10
             imageView.clipsToBounds = true
             scrollView.addSubview(imageView)
@@ -41,9 +41,9 @@ class HorizontalScroll: UIView {
         
         //Устанавливаем размеры и координаты для картинок
         for (index, imageView) in imageViews.enumerated() {
-            imageView.frame.size = CGSize(width: self.frame.width - padding * 2, height: self.frame.height)
+            imageView.frame.size = CGSize(width: self.frame.width - padding * 2, height: self.frame.width - padding * 2)
             imageView.frame.origin.x = scrollView.frame.width * CGFloat(index) + padding
-            imageView.frame.origin.y = self.frame.origin.y
+            imageView.center.y = self.center.y
         }
         let contentWidth = scrollView.frame.width * CGFloat(imageViews.count)
         scrollView.contentSize = CGSize(width: contentWidth, height: self.frame.height)

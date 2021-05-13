@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CollectionTableViewCell: UITableViewCell {
-    static let identifier = "CollectionTableViewCell"
+class MyTableViewCell: UITableViewCell {
+    static let identifier = "MyTableViewCell"
     @IBOutlet var collectionView: UICollectionView!
     var collection: [UIImage] = []
     
     static func nib() -> UINib {
-        return UINib(nibName: "CollectionTableViewCell", bundle: nil)
+        return UINib(nibName: "MyTableViewCell", bundle: nil)
     }
     
     override func awakeFromNib() {
@@ -31,7 +31,7 @@ class CollectionTableViewCell: UITableViewCell {
     }
 }
 
-extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collection.count
     }

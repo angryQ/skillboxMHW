@@ -18,7 +18,7 @@ class TableAndCollectionView: UIView {
         super.init(frame: frame)
         
         self.addSubview(tableView)
-        tableView.register(CollectionTableViewCell.nib(), forCellReuseIdentifier: CollectionTableViewCell.identifier)
+        tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = UIColor.clear
@@ -39,7 +39,7 @@ extension TableAndCollectionView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as! CollectionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as! MyTableViewCell
         cell.configure(with: collections[indexPath.section].images)
         return cell
     }
