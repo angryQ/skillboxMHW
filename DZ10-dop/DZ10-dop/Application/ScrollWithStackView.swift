@@ -41,7 +41,7 @@ class ScrollWithStackView: UIView {
         contentWidth = self.frame.width * CGFloat(imageCollection.images.count)
         scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.height)
-        contentView.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: self.frame.height)
+        contentView.frame = CGRect(x: 10, y: 0, width: scrollView.frame.width, height: self.frame.height)
         stackView.frame.size = CGSize(width: contentWidth - padding * 2, height: contentView.frame.height / 2)
         stackView.center.y = contentView.center.y
     }
@@ -61,8 +61,6 @@ class ScrollWithStackView: UIView {
         stackView.distribution = .fillEqually
         stackView.axis = .horizontal
         stackView.spacing = padding * 2
-        stackView.frame.origin.x = padding
-        stackView.layer.cornerRadius = 10
     }
 }
 

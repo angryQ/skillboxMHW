@@ -46,6 +46,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+//Настраиваем CollectionView от меню
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
