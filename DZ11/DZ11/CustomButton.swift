@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable class CustomButton: UIView {
-    
     let recognizer = UITapGestureRecognizer()
     
     @IBInspectable var cornerRadius: CGFloat = 10 {
@@ -33,6 +32,7 @@ import UIKit
             }
         }
     }
+    
     @objc func buttonTapped(_ gestureRecognizer: UITapGestureRecognizer) {
           print("Hello!")
        }

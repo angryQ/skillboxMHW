@@ -7,23 +7,18 @@
 //
 
 import UIKit
-protocol CustomSegmentedControlDelegate {
+
+protocol CustomSegmentedControlDelegate: class {
     func getSelectedSegment(selectedSegment: String)
 }
+
 @IBDesignable class CustomSegmentedControl: UIView {
-    
-    var buttons = [UIButton]()
+    var buttons = [UIButton]() //массив всех кнопок сегментед контрола
     var firstSegmentButton = UIButton(type: .system)
     var secondSegmentButton = UIButton(type: .system)
-    var selectedSegmentTintColor = UIView()
-    var selectedSegmentText: String?
+    var selectedSegment = UIView() //вью для выбранного сегмента, которая будет двигаться
+    weak var delegate: CustomSegmentedControlDelegate?
     
-    var delegate: CustomSegmentedControlDelegate?
-    
-       // { get { return "Selected segment: \(selectedSegmentText)" }
-//        //set { self.delegate = newValue}
-//
-    //}
     @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
@@ -35,7 +30,6 @@ protocol CustomSegmentedControlDelegate {
             layer.borderColor = borderColor.cgColor
         }
     }
-    
     @IBInspectable var firstSegmentTitle: String = "" {
         didSet {
             firstSegmentButton.setTitle(firstSegmentTitle, for: .normal)
@@ -48,54 +42,66 @@ protocol CustomSegmentedControlDelegate {
     }
     @IBInspectable var selectorColor: UIColor = UIColor.darkGray {
         didSet {
-            selectedSegmentTintColor.backgroundColor = selectorColor
+            selectedSegment.backgroundColor = selectorColor
         }
     }
     
+    //событие на нажатие на сегмент контрола
     @objc func buttonTapped(button: UIButton) {
         for (btnIndex, btn) in buttons.enumerated() {
+            //устанавливаем всем сегментам цвет текста на неактивный серый
             btn.setTitleColor(UIColor.lightGray, for: .normal)
+            //для нажатой кнопки меняем цвет текста на белый и двигаем к ней вью имитирующую активный сегмент
             if btn == button {
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.selectedSegmentTintColor.frame.origin.x = self.frame.width / CGFloat(self.buttons.count) * CGFloat(btnIndex)
+                    self.selectedSegment.frame.origin.x = self.frame.width / CGFloat(self.buttons.count) * CGFloat(btnIndex)
+                    
                 })
-                 button.setTitleColor(UIColor.white, for: .normal)
-                selectedSegmentText = btn.titleLabel?.text!
-                print("test: \(selectedSegmentText!)")
-                delegate?.getSelectedSegment(selectedSegment: selectedSegmentText!)
+                guard let btnText = button.titleLabel!.text else {return}
+                delegate?.getSelectedSegment(selectedSegment: btnText)
+                
+                button.setTitleColor(UIColor.white, for: .normal)
             }
         }
     }
+    
     override func draw(_ rect: CGRect) {
-        selectedSegmentText = "test"
-        layer.cornerRadius = frame.height / 2
-        
+        self.layer.cornerRadius = frame.height / 2
         buttons.append(firstSegmentButton)
         buttons.append(secondSegmentButton)
+        
+        //добавляем всем кнопкам событие и устанавливаем цвет текста неактивного сегмента
         for button in buttons {
             button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
             button.setTitleColor(UIColor.lightGray, for: .normal)
         }
-        buttons[0].setTitleColor(UIColor.white, for: .normal)
         
-        selectedSegmentTintColor.frame = CGRect(x: 0, y: 0, width: frame.width / CGFloat(buttons.count), height: frame.height)
-        selectedSegmentTintColor.layer.cornerRadius = frame.height / CGFloat(buttons.count)
-        selectedSegmentTintColor.backgroundColor = selectorColor
-        addSubview(selectedSegmentTintColor)
+        //для первой кнопки меняем цвет текста
+        buttons[0].setTitleColor(UIColor.white, for: .normal)
+        guard let firstBtntnText = buttons[0].titleLabel!.text else {return}
+        delegate?.getSelectedSegment(selectedSegment: firstBtntnText)
+        
+        //настраиваем вью, которая имитирует выбранный сегмент
+        selectedSegment.frame = CGRect(x: 0, y: 0, width: self.frame.width / CGFloat(buttons.count), height: self.frame.height)
+        selectedSegment.layer.cornerRadius = self.frame.height / 2
+        selectedSegment.backgroundColor = selectorColor
+        self.addSubview(selectedSegment)
         
         let buttonsStackView = UIStackView()
-        configureButtonsStackView(buttonsStackView: buttonsStackView)
+        configureButtonsStackView(buttonsStackView)
     }
     
-    func configureButtonsStackView(buttonsStackView: UIStackView) {
+    func configureButtonsStackView(_ buttonsStackView: UIStackView) {
         buttonsStackView.addArrangedSubview(firstSegmentButton)
         buttonsStackView.addArrangedSubview(secondSegmentButton)
         buttonsStackView.axis = .horizontal
         buttonsStackView.spacing = 10
         buttonsStackView.distribution = .fillEqually
         buttonsStackView.alignment = .fill
-        addSubview(buttonsStackView)
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(buttonsStackView)
+        
         NSLayoutConstraint.activate([
             buttonsStackView.topAnchor.constraint(equalTo: self.topAnchor),
             buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -103,7 +109,4 @@ protocol CustomSegmentedControlDelegate {
             buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
-}
-extension CustomSegmentedControl {
-    
 }
