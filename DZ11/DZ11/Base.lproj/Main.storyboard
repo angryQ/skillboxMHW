@@ -118,6 +118,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="clockView" destination="hiC-eI-4cg" id="AOm-Ut-LyC"/>
                         <outlet property="customSegmentedControl" destination="x5e-HQ-bEu" id="G26-aT-jjg"/>
                     </connections>
                 </viewController>

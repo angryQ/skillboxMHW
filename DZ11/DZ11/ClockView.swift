@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Foundation
 
-@IBDesignable class ClockView: UIView {
+class ClockView: UIView {
     
     let markerWidth: CGFloat = 4
     let markerLenght: CGFloat = 10
@@ -22,8 +23,12 @@ import UIKit
     private let leftMarker = UIView()
     private let rightMarker = UIView()
     
+    let date = Date()
+    let duration: Double = 1.0
+    var timer: Timer?
+    
     //Часы
-    @IBInspectable private var hourLineColor: UIColor = UIColor.blue {
+    @IBInspectable var hourLineColor: UIColor = UIColor.blue {
         didSet {
             hourLine.backgroundColor = hourLineColor
         }
@@ -45,7 +50,7 @@ import UIKit
     }
     
     //Минуты
-    @IBInspectable private var minuteLineColor: UIColor = UIColor.green {
+    @IBInspectable var minuteLineColor: UIColor = UIColor.green {
         didSet {
             minuteLine.backgroundColor = minuteLineColor
         }
@@ -55,7 +60,7 @@ import UIKit
             layoutIfNeeded()
         }
     }
-    @IBInspectable private var minuteLineHeight: CGFloat = 30 {
+    @IBInspectable private var minuteLineHeight: CGFloat = 80 {
         didSet {
             updateClockHandFrame(clockHand: minuteLine, width: minuteLineWidth, height: minuteLineHeight)
         }
@@ -67,7 +72,7 @@ import UIKit
     }
     
     //Секунды
-    @IBInspectable private var secondsLineColor: UIColor = UIColor.green {
+    @IBInspectable var secondsLineColor: UIColor = UIColor.green {
         didSet {
             secondsLine.backgroundColor = secondsLineColor
         }
@@ -77,7 +82,7 @@ import UIKit
             layoutIfNeeded()
         }
     }
-    @IBInspectable private var secondsLineHeight: CGFloat = 20 {
+    @IBInspectable private var secondsLineHeight: CGFloat = 100 {
         didSet {
             updateClockHandFrame(clockHand: secondsLine, width: secondsLineWidth, height: secondsLineHeight)
         }
@@ -101,19 +106,50 @@ import UIKit
         drawClockFace()
     }
     
+    func start2() {
+        if timer == nil {
+            timer = Timer.scheduledTimer(withTimeInterval: duration, repeats: true) { timer in
+                self.updateTime()
+            }
+        }
+        else {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    private func updateTime () {
+        updateSeconds(newValue: CGFloat(Calendar.current.component(.second, from: Date())))
+        updateMinutes(newValue: CGFloat(Calendar.current.component(.minute, from: Date())))
+        updateHours(newValue: CGFloat(Calendar.current.component(.hour, from: Date())))
+        
+        layoutIfNeeded()
+    }
+    
+    func start() {
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = 360
+        rotation.duration = 3600
+        rotation.isCumulative = true
+        rotation.repeatCount = .greatestFiniteMagnitude
+        secondsLine.layer.add(rotation, forKey: "rotateAnimation")
+        rotation.duration = 3600 * 60
+        minuteLine.layer.add(rotation, forKey: "rotateAnimation")
+    }
+    
     override func draw(_ rect: CGRect) {
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         minuteLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         secondsLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         
         updateClockHandFrame(clockHand: hourLine, width: hourLineWidth, height: hourLineHeight)
-        updateHours()
+        updateHours(newValue: CGFloat(Calendar.current.component(.hour, from: Date())))
         
         updateClockHandFrame(clockHand: minuteLine, width: minuteLineWidth, height: minuteLineHeight)
-        updateMinutes()
+        updateMinutes(newValue: CGFloat(Calendar.current.component(.minute, from: Date())))
         
         updateClockHandFrame(clockHand: secondsLine, width: secondsLineWidth, height: secondsLineHeight)
-        updateSeconds()
+        updateSeconds(newValue: CGFloat(Calendar.current.component(.second, from: Date())))
     }
     
     //Отрисовываем часы
@@ -155,17 +191,18 @@ import UIKit
     }
     
     //Функции, которые двигают стрелки при изменении времени
-    private func updateHours() {
+    private func updateHours(newValue hours: CGFloat) {
         let angle = CGFloat.pi * 2 * (hours / CGFloat(12))
         hourLine.transform = CGAffineTransform(rotationAngle: angle)
     }
     
-    private func updateMinutes() {
+    private func updateMinutes(newValue minutes: CGFloat) {
         let angle = minutes * 6 * CGFloat.pi / 180
         minuteLine.transform = .init(rotationAngle: angle)
     }
     
-    private func updateSeconds() {
+    private func updateSeconds(newValue seconds: CGFloat) {
+        debugPrint(seconds)
         let angle = seconds * 6 * CGFloat.pi / 180
         secondsLine.transform = .init(rotationAngle: angle)
     }

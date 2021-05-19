@@ -12,13 +12,16 @@ class ViewController: UIViewController {
 
     var selSegment = ""
     
+    @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var customSegmentedControl: CustomSegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customSegmentedControl.delegate = self
+        clockView.start2()
     }
 }
+
 extension ViewController: CustomSegmentedControlDelegate {
     func getSelectedSegment(selectedSegment: String) {
         selSegment = selectedSegment
