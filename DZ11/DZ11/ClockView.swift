@@ -23,10 +23,8 @@ class ClockView: UIView {
     private let leftMarker = UIView()
     private let rightMarker = UIView()
     
-    let date = Date()
-    let duration: Double = 1.0
     var timer: Timer?
-    
+
     //Часы
     @IBInspectable var hourLineColor: UIColor = UIColor.blue {
         didSet {
@@ -106,9 +104,10 @@ class ClockView: UIView {
         drawClockFace()
     }
     
-    func start2() {
+    //Функция для запуска часов
+    func start() {
         if timer == nil {
-            timer = Timer.scheduledTimer(withTimeInterval: duration, repeats: true) { timer in
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 self.updateTime()
             }
         }
@@ -117,7 +116,7 @@ class ClockView: UIView {
             timer = nil
         }
     }
-    
+    //Функция для обновления времени
     private func updateTime () {
         updateSeconds(newValue: CGFloat(Calendar.current.component(.second, from: Date())))
         updateMinutes(newValue: CGFloat(Calendar.current.component(.minute, from: Date())))
@@ -126,30 +125,15 @@ class ClockView: UIView {
         layoutIfNeeded()
     }
     
-    func start() {
-        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = 360
-        rotation.duration = 3600
-        rotation.isCumulative = true
-        rotation.repeatCount = .greatestFiniteMagnitude
-        secondsLine.layer.add(rotation, forKey: "rotateAnimation")
-        rotation.duration = 3600 * 60
-        minuteLine.layer.add(rotation, forKey: "rotateAnimation")
-    }
-    
     override func draw(_ rect: CGRect) {
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         minuteLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         secondsLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         
         updateClockHandFrame(clockHand: hourLine, width: hourLineWidth, height: hourLineHeight)
-        updateHours(newValue: CGFloat(Calendar.current.component(.hour, from: Date())))
-        
         updateClockHandFrame(clockHand: minuteLine, width: minuteLineWidth, height: minuteLineHeight)
-        updateMinutes(newValue: CGFloat(Calendar.current.component(.minute, from: Date())))
-        
         updateClockHandFrame(clockHand: secondsLine, width: secondsLineWidth, height: secondsLineHeight)
-        updateSeconds(newValue: CGFloat(Calendar.current.component(.second, from: Date())))
+        updateTime()
     }
     
     //Отрисовываем часы

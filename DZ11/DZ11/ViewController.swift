@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         customSegmentedControl.delegate = self
-        clockView.start2()
+        clockView.start()
     }
 }
 
